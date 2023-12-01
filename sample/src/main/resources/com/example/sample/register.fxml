@@ -27,9 +27,9 @@
          <children>
             <HBox alignment="CENTER" prefHeight="114.0" prefWidth="400.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="93.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="136.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imgs/myLogo.png" />
+                        <Image url="@imgs/bg.png" />
                      </image>
                   </ImageView>
                </children>
