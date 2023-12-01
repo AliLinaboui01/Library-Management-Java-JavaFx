@@ -1,0 +1,35 @@
+
+.round-layout{
+    -fx-border-radius: 50;
+    -fx-border-color: #D7D7D7;
+}
+.white-background{
+    -fx-background-color: #fff;
+}
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+.selected{
+    -fx-background-color: #F3F3F3;
+}
+.mouse-moved:hover{
+    -fx-background-color: #E4E4E4;
+    -fx-cursor: hand;
+}
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1) , 10 , 0 , 0 , 10 );
+}
+
+#myImageView {
+    -fx-clip: "M 10 0 L 190 0 L 200 10 L 200 190 L 190 200 L 10 200 L 0 190 L 0 10 Z";
+}
+
+.raduis{
+    -fx-background-radius: 15;
+}
+
+.round-layout2{
+    -fx-border-radius: 10;
+    -fx-border-color: #D7D7D7;
+}
+
