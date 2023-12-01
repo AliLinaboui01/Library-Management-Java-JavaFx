@@ -14,23 +14,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.LoginController">
    <children>
-      <ImageView fitHeight="732.0" fitWidth="906.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="700.0" fitWidth="916.0" onMouseClicked="#goRegister" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/backgroundDes.png" />
          </image>
          <viewport>
-            <Rectangle2D height="726.0" width="940.0" />
+            <Rectangle2D height="726.0" width="941.0" />
          </viewport>
       </ImageView>
-      <VBox layoutX="250.0" layoutY="34.0" prefHeight="630.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+      <VBox alignment="CENTER" layoutX="254.0" layoutY="34.0" prefHeight="630.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 15;">
          <children>
             <HBox alignment="CENTER" prefHeight="114.0" prefWidth="400.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="93.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="136.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imgs/myLogo.png" />
+                        <Image url="@imgs/bg.png" />
                      </image>
                   </ImageView>
                </children>
@@ -63,7 +63,7 @@
                         <Image url="@imgs/padlock.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="45.0" layoutY="412.0" onDragDetected="#goRegister" style="-fx-cursor: hand;" styleClass="mouse-moved" stylesheets="@css/style.css" text="New User? Register Here!" textFill="#4d4d4d" />
+                  <Label fx:id="registerLabel" layoutX="45.0" layoutY="412.0" onDragDetected="#goRegister" style="-fx-cursor: hand;" styleClass="mouse-moved" stylesheets="@css/style.css" text="New User? Register Here!" textFill="#4d4d4d" />
                   <Label layoutX="286.0" layoutY="412.0" styleClass="mouse-moved" stylesheets="@css/style.css" text="Use As Guest" textFill="#4d4d4d" />
                </children>
             </AnchorPane>

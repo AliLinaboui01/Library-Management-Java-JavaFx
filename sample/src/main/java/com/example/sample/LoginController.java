@@ -57,6 +57,7 @@ public class LoginController {
         }
     }
     public void goRegister(ActionEvent e) {
+        System.out.println("hi ali");
 //        try {
             // Load the FXML file for the register scene
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
