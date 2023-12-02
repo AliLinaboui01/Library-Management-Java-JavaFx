@@ -29,7 +29,7 @@ public class LoginController {
         if (name.equals("ali") && pass.equals("ali123")) {
             // Load the next FXML file
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("library.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
                 Parent root = loader.load();
 
                 // Create a new scene
@@ -40,6 +40,7 @@ public class LoginController {
 
                 // Set the new scene on the stage
                 currentStage.setScene(nextScene);
+                currentStage.setFullScreen(true);
 
             } catch (IOException ex) {
                 ex.printStackTrace(); // Handle the exception appropriately
