@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="1125.0" style="-fx-background-radius: 5;" styleClass="white-background" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.CardBookController">
+   <children>
+      <ImageView fx:id="imageBook" fitHeight="120.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+         </HBox.margin>
+         <image>
+            <Image url="@imgs/rich.jpeg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" prefHeight="92.0" prefWidth="236.0">
+         <children>
+            <Label fx:id="titleBook" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="236.0" text="RICH DAD POOR DADD" textFill="#4d4d4d" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="authorName" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="236.0" text="Robert Kiyosaki &amp; Sharon Lechter,1997" textFill="#4d4d4d">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="14.0" prefWidth="216.0" text="Second Edition" textFill="#4d4d4d">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label alignment="CENTER" text="4.5/5" textFill="#4d4d4d" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="190.0" spacing="5.0">
+         <children>
+            <Label fx:id="categoryName" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" text="Computer Science" textFill="#4d4d4d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="categoryId" alignment="CENTER" prefHeight="18.0" prefWidth="196.0" text="Ux Design" textFill="#4d4d4d" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="124.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="150.0">
+               <children>
+                  <ImageView fitHeight="15.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/check.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="Hard-Copy" textFill="#4d4d4d">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="59.0" prefHeight="29.0" prefWidth="171.0">
+               <children>
+                  <ImageView fitHeight="15.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/check.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="E-Book" textFill="#4d4d4d">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="77.0" prefHeight="29.0" prefWidth="171.0">
+               <children>
+                  <ImageView fitHeight="15.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/check.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="Audio-Book" textFill="#4d4d4d">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="119.0" spacing="5.0">
+         <children>
+            <Label fx:id="possibity" alignment="CENTER" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #42BB4E;" styleClass="raduis" stylesheets="@css/style.css" text="Borrowed" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="119.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/location_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="55.0" text="CS A-15" textFill="#4d4d4d">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="99.0" prefWidth="95.0">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/love.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="112.0">
+         <children>
+            <Button fx:id="previewButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #ffffff; -fx-border-color: #F76B56; -fx-border-radius: 5; -fx-cursor: hand;" stylesheets="@css/style.css" text="Preview" textFill="#f76b56" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
