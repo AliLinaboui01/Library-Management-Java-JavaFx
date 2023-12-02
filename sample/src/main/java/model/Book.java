@@ -4,6 +4,8 @@ public class Book {
     private String name;
     private String imageSrc;
     private String author;
+    private String possibility;
+    private String previewButton;
 
     private double rating;
     public void setName(String name) {
@@ -36,5 +38,21 @@ public class Book {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public String getPossibility() {
+        return possibility;
+    }
+
+    public void setPossibility(String possibility) {
+        this.possibility = possibility;
+    }
+
+    public String getPreviewButton() {
+        return previewButton;
+    }
+
+    public void setPreviewButton(String previewButton) {
+        this.previewButton = previewButton;
     }
 }
