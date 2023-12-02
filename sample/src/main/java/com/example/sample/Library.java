@@ -21,7 +21,7 @@ public class Library extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
       // stage.setResizable(false);
-        stage.setf
+
         stage.setTitle("My Library");
 
         stage.setScene(scene);
