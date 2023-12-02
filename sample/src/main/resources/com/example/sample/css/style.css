@@ -1,7 +1,14 @@
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Montserrat+Subrayada:wght@700&family=Montserrat:ital,wght@1,700&family=Roboto:ital,wght@0,100;0,400;0,500;1,400&display=swap');
 .round-layout{
     -fx-border-radius: 50;
     -fx-border-color: #D7D7D7;
+}
+
+.white-backgroundB{
+    -fx-background-color: #fff;
+    -fx-border-radius: 10;
+    -fx-background-radius: 15;
+
 }
 .white-background{
     -fx-background-color: #fff;
@@ -33,3 +40,57 @@
     -fx-border-color: #D7D7D7;
 }
 
+.back_color{
+    -fx-background-color: F3F3F7;
+}
+.font-gara{
+    -fx-font-family: 'EB Garamond', serif;
+}
+.gradient{
+    -fx-background-color:#EECDA3;  /* fallback for old browsers */
+    -fx-background-color:-webkit-linear-gradient(to top, #EF629F, #EECDA3);   /* Chrome 10-25, Safari 5.1-6 */
+    -fx-background-color: linear-gradient(to top, #EF629F, #EECDA3);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.gradient-bar{
+    -fx-background-color:#EECDA3;  /* fallback for old browsers */
+    -fx-background-color:-webkit-linear-gradient(to top, #EF629F, #EECDA3);   /* Chrome 10-25, Safari 5.1-6 */
+    -fx-background-color: linear-gradient(to top, #EF629F, #EECDA3);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.raduis-bar {
+    -fx-background-radius: 15 0 0 15;
+}
+.raduis-scrol{
+    -fx-background-radius: 0 15 15 0;
+
+}
+.round-layoutbook{
+    -fx-border-radius: 15;
+    -fx-border-color: #D7D7D7;
+}
+
+/* styles.css */
+
+/* styles.css */
+
+.transparent-scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* Make the scroll bars transparent */
+.transparent-scroll-pane .scroll-bar {
+    -fx-background: transparent;
+}
+
+/* Optional: Customize the thumb of the scroll bars */
+.transparent-scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.5); /* Example: semi-transparent white */
+}
+.font-gara{
+    -fx-font-family: 'EB Garamond', serif;
+}
