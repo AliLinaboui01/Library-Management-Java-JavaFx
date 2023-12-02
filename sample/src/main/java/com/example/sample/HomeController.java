@@ -20,12 +20,16 @@ public class HomeController implements Initializable {
     private HBox recomondebooks;
     @FXML
     private HBox recomondebooks2;
+    @FXML
+    private HBox acadimicbook;
     private List<Book> recentlyAdded;
     private  List<Book> recomdedforyou;
+    private  List<Book> acadimicbooks;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recomdedforyou = new ArrayList<>(recomdedforyou());
+        acadimicbooks = new ArrayList<>(recomdedforyou());
         for (Book book : recentlyAdded) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("bookcompnent.fxml"));
@@ -47,7 +51,7 @@ public class HomeController implements Initializable {
             try {
                 VBox cardBox = fxmlLoader.load();
                 BookItemController bookItemController =fxmlLoader.getController();
-                bookItemController .setData(book);
+                bookItemController.setData(book);
                 recomondebooks.getChildren().add(cardBox);
 
             } catch (IOException e) {
@@ -55,15 +59,14 @@ public class HomeController implements Initializable {
             }
 
         }
-        for (Book book : recomdedforyou) {
+       for (Book book :acadimicbooks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("bookItem.fxml"));
             try {
                 VBox bookbox = fxmlLoader.load();
                 BookItemController bookItemController =fxmlLoader.getController();
-                bookItemController .setData(book);
-                recomondebooks.getChildren().add(bookbox);
-                recomondebooks2.getChildren().add(bookbox);
+                bookItemController.setData(book);
+                acadimicbook.getChildren().add(bookbox);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
