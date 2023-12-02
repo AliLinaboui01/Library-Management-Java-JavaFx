@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -63,8 +64,18 @@
                         <Image url="@imgs/padlock.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="registerLabel" layoutX="45.0" layoutY="412.0" onDragDetected="#goRegister" style="-fx-cursor: hand;" styleClass="mouse-moved" stylesheets="@css/style.css" text="New User? Register Here!" textFill="#4d4d4d" />
-                  <Label layoutX="286.0" layoutY="412.0" styleClass="mouse-moved" stylesheets="@css/style.css" text="Use As Guest" textFill="#4d4d4d" />
+                  <Button fx:id="registerLabel" layoutX="44.0" layoutY="408.0" mnemonicParsing="false" onAction="#goRegister" stylesheets="@css/style.css" text="New User? Register Here!">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="mouse-moved" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="guesLable" layoutX="263.0" layoutY="408.0" mnemonicParsing="false" stylesheets="@css/style.css" text="Use As Guest">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="mouse-moved" />
+                     </styleClass>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
