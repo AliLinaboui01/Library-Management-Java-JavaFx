@@ -19,7 +19,7 @@ public class Library extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
-       // stage.setResizable(false);
+      // stage.setResizable(false);
         stage.setTitle("My Library");
         stage.setScene(scene);
         stage.show();
