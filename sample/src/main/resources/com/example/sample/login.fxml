@@ -76,6 +76,7 @@
                         <String fx:value="mouse-moved" />
                      </styleClass>
                   </Button>
+
                </children>
             </AnchorPane>
          </children>
