@@ -94,3 +94,13 @@
 .font-gara{
     -fx-font-family: 'EB Garamond', serif;
 }
+.raduis2{
+    -fx-background-radius: 8;
+
+}
+.orange{
+    -fx-background-color: #F27851;
+}
+.green{
+    -fx-background-color:  #41B64D;
+}
