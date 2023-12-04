@@ -6,12 +6,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="1125.0" style="-fx-background-radius: 5;" styleClass="white-background" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.CardBookController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="1151.0" style="-fx-background-radius: 5;" styleClass="white-background" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.CardBookController">
    <children>
       <ImageView fx:id="imageBook" fitHeight="120.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
@@ -151,20 +149,19 @@
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="99.0" prefWidth="95.0">
+      <HBox alignment="CENTER" prefHeight="134.0" prefWidth="126.0">
          <children>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imgs/love.png" />
                </image>
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets />
                </HBox.margin>
             </ImageView>
-            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="112.0">
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="142.0">
          <children>
             <Button fx:id="previewButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #ffffff; -fx-border-color: #F76B56; -fx-border-radius: 5; -fx-cursor: hand;" stylesheets="@css/style.css" text="Preview" textFill="#f76b56" />
          </children>
