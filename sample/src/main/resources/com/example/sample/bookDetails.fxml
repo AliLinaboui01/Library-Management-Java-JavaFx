@@ -537,6 +537,122 @@
                                           </VBox>
                                        </children>
                                     </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="846.0" stylesheets="@css/style.css">
+                                             <children>
+                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="947.0" spacing="20.0" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets left="70.0" />
+                                                   </HBox.margin>
+                                                   <children>
+                                                      <Label lineSpacing="9.0" prefHeight="65.0" prefWidth="108.0" text="Overview" textFill="#f27851">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label lineSpacing="9.0" prefHeight="51.0" prefWidth="162.0" text="View 166 Editions" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label lineSpacing="9.0" prefHeight="51.0" prefWidth="130.0" text="Details" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label lineSpacing="9.0" prefHeight="51.0" prefWidth="147.0" text="4.1k Reviews" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label lineSpacing="9.0" prefHeight="51.0" prefWidth="145.0" text="Lists" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label lineSpacing="9.0" prefHeight="65.0" prefWidth="108.0" text="Related Books" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="846.0" spacing="30.0" stylesheets="@css/style.css">
+                                             <children>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="217.0" styleClass="white-background" stylesheets="@css/style.css">
+                                                   <HBox.margin>
+                                                      <Insets left="70.0" />
+                                                   </HBox.margin>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="Publish Date" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Regular" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" prefHeight="27.0" prefWidth="229.0" text="200" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="217.0" styleClass="white-background" stylesheets="@css/style.css">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="Publish Date" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Regular" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" prefHeight="27.0" prefWidth="229.0" text="200" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="203.0" styleClass="white-background" stylesheets="@css/style.css">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="Publish Date" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Regular" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" prefHeight="27.0" prefWidth="229.0" text="200" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="203.0" styleClass="white-background" stylesheets="@css/style.css">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="Publish Date" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Regular" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" prefHeight="27.0" prefWidth="229.0" text="200" textFill="#666666">
+                                                         <font>
+                                                            <Font name="Inter Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="96.0" prefWidth="942.0" text="Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru &#10;Steve Krug’s guide to help them understand the principles of intuitive navigation and information design. Witty, commonsensical, and eminently&#10; practical, it’s one of the best-loved and most...  Read more" textFill="#666666">
+                                             <VBox.margin>
+                                                <Insets left="70.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="Inter Regular" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
                                  </children>
                                  <padding>
                                     <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
