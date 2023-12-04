@@ -14,9 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
-=======
+
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1343.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookDetailController">
     <top>
@@ -40,7 +38,8 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.HomeController">
 
->>>>>>> 50f768ae94e28615b2633e77caed6ee8475f9a91
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="306.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
          <children>
@@ -57,7 +56,6 @@
                            <image>
                               <Image url="@imgs/icons8-home.png" />
                            </image>
-
                         </ImageView>
                         <Label prefHeight="17.0" prefWidth="67.0" styleClass="font-gara" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
                            <font>

@@ -19,7 +19,7 @@ public class CardBookController {
     private ImageView imageBook;
 
     @FXML
-    private Label possibity;
+    private Label possibility;
 
     @FXML
     private Button previewButton;

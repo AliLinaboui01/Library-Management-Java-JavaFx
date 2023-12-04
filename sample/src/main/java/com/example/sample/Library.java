@@ -14,7 +14,9 @@ public class Library extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
 
+
         FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
+
 
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
