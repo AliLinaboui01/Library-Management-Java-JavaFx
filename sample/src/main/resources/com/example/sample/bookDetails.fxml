@@ -14,6 +14,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1343.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookDetailController">
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <Label alignment="CENTER" prefHeight="59.0" prefWidth="169.0" text="E-Library" textFill="#ff5056">
+                    <font>
+                        <Font name="Edwardian Script ITC" size="36.0" />
+                    </font>
+                </Label>
+                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="255.0" styleClass="round-layout" stylesheets="@css/style.css">
+                    <children>
+                        <TextField prefHeight="26.0" prefWidth="222.0" promptText="Search" styleClass="transparent" stylesheets="@css/style.css" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imgs/search-icon-png-2.png" />
+                            </image>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.HomeController">
+
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="306.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
