@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -23,7 +21,7 @@
                         <Image url="@imgs/bg.png" />
                     </image>
                 </ImageView>
-                <VBox prefHeight="147.0" prefWidth="221.0" spacing="12.0">
+                <VBox prefHeight="130.0" prefWidth="306.0" spacing="12.0">
                     <children>
                         <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
                             <children>
@@ -34,7 +32,7 @@
                                 </ImageView>
                                 <Label prefHeight="17.0" prefWidth="67.0" styleClass="font-gara" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
                                     <font>
-                                        <Font name="Inter Regular" size="18.0" />
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
@@ -48,7 +46,7 @@
                                 </ImageView>
                                 <Label prefHeight="17.0" prefWidth="68.0" styleClass="font-gara" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
@@ -65,32 +63,35 @@
                                         <Insets left="10.0" />
                                     </HBox.margin>
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
                     </children>
                 </VBox>
-                <Pane prefHeight="279.0" prefWidth="221.0" VBox.vgrow="ALWAYS" />
+                <Pane prefHeight="342.0" prefWidth="306.0" VBox.vgrow="ALWAYS" />
                 <VBox alignment="TOP_CENTER" prefHeight="119.0" prefWidth="221.0" spacing="12.0">
                     <children>
                         <Label prefHeight="22.0" prefWidth="134.0" text="About" textFill="#8a8a8a">
                             <font>
-                                <Font size="15.0" />
+                                <Font size="14.0" />
                             </font>
                         </Label>
                         <Label prefHeight="22.0" prefWidth="134.0" text="Logout" textFill="#8a8a8a">
                             <font>
-                                <Font name="Inter Regular" size="15.0" />
+                                <Font size="14.0" />
                             </font>
                         </Label>
                         <Label prefHeight="22.0" prefWidth="134.0" text="Terms &amp; Condition" textFill="#8a8a8a">
                             <font>
-                                <Font name="Inter Regular" size="15.0" />
+                                <Font size="14.0" />
                             </font>
                         </Label>
                     </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
                 </VBox>
             </children>
         </VBox>
@@ -145,7 +146,7 @@
                                     </children>
                                 </HBox>
                                 <HBox prefHeight="52.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
-                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="32.0" styleClass="round-layout" stylesheets="@css/style.css">
+                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="12.0" styleClass="round-layout" stylesheets="@css/style.css">
                                     <children>
                                         <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -155,7 +156,7 @@
                                                 <Insets />
                                             </HBox.margin>
                                         </ImageView>
-                                        <Label text="Kenson">
+                                        <Label prefHeight="16.0" prefWidth="81.0" text="Ali Linaboui">
                                             <font>
                                                 <Font name="Arial" size="13.0" />
                                             </font>
@@ -172,64 +173,70 @@
                         </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="1008.0">
                      <children>
-                        <ComboBox prefHeight="36.0" prefWidth="122.0" promptText="Browse" style="-fx-background-radius: 50;" stylesheets="@css/style.css">
-                           <HBox.margin>
-                              <Insets left="20.0" right="10.0" />
-                           </HBox.margin>
-                           <styleClass>
-                              <String fx:value="font-gara" />
-                              <String fx:value="white-background" />
-                           </styleClass>
-                        </ComboBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="1008.0">
-                     <children>
-                        <Label prefHeight="27.0" prefWidth="347.0" text="Title" textFill="#4d4d4d">
-                           <HBox.margin>
-                              <Insets left="30.0" />
-                           </HBox.margin>
+                        <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="43.0" text="All" textFill="#4d4d4d">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="27.0" prefWidth="106.0" text="Ratings" textFill="#4d4d4d">
+                        <Label prefHeight="34.0" prefWidth="58.0" text=" Books" textFill="#ff5056">
                            <font>
                               <Font size="16.0" />
                            </font>
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label prefHeight="27.0" prefWidth="158.0" text="Category" textFill="#4d4d4d">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="12.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label prefHeight="27.0" prefWidth="127.0" text="Avaibility" textFill="#4d4d4d">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label prefHeight="27.0" prefWidth="129.0" text="Status" textFill="#4d4d4d">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
                         </Label>
                      </children>
                   </HBox>
                   <ScrollPane prefHeight="610.0" prefWidth="1008.0" styleClass="transparent" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
                      <content>
-                        <VBox fx:id="allBoxVbox" prefHeight="527.0" prefWidth="1180.0" spacing="15.0">
+                        <VBox fx:id="allBoxVbox" prefHeight="668.0" prefWidth="1180.0" spacing="15.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="1008.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="347.0" text="Title" textFill="#4d4d4d">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="27.0" prefWidth="106.0" text="Ratings" textFill="#4d4d4d">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="27.0" prefWidth="158.0" text="Category" textFill="#4d4d4d">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="27.0" prefWidth="127.0" text="Avaibility" textFill="#4d4d4d">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="27.0" prefWidth="129.0" text="Status" textFill="#4d4d4d">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
                            <padding>
                               <Insets bottom="20.0" left="20.0" />
                            </padding>
