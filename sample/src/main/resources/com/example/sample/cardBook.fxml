@@ -128,7 +128,7 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="134.0" prefWidth="119.0" spacing="5.0">
          <children>
-            <Label fx:id="possibity" alignment="CENTER" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #42BB4E;" styleClass="raduis" stylesheets="@css/style.css" text="Borrowed" textFill="WHITE">
+            <Label fx:id="possibility" alignment="CENTER" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #42BB4E;" styleClass="raduis" stylesheets="@css/style.css" text="Borrowed" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
