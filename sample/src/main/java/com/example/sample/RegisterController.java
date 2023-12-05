@@ -1,5 +1,10 @@
 package com.example.sample;
+import javax.mail.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
+import SMTP_Mail.SendMail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +18,8 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.util.Properties;
+import java.util.Random;
 
 public class RegisterController {
 
@@ -32,9 +39,20 @@ public class RegisterController {
 
     @FXML
     private Button registerButton;
-    public void register(ActionEvent e){
-        final String SSl_FACTORY  ="";
+    private final SendMail sendMail = new SendMail("alilinaboui@gmail.com", "eyoc hrcz jumz crbg");
+    public void register(ActionEvent e) {
 
+        String mailUser = email.getText();
+
+        String verificationCode = generateVerificationCode();
+//        System.out.println(verificationCode);
+        try {
+            sendMail.SendVerificationMail(mailUser, verificationCode);
+            System.out.println("Verification email sent successfully.");
+        } catch (MessagingException ex) {
+            ex.printStackTrace();
+            System.out.println("Error sending verification email.");
+        }
     }
     public void goLogin(ActionEvent e){
         try {
@@ -55,5 +73,11 @@ public class RegisterController {
         } catch (IOException ex) {
             ex.printStackTrace(); // Handle the exception appropriately
         }
+    }
+    private String generateVerificationCode() {
+        // Generate a random 6-digit verification code
+        Random random = new Random();
+        int code = 100000 + random.nextInt(900000);
+        return String.valueOf(code);
     }
 }

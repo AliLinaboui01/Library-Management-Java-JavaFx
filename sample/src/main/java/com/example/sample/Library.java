@@ -16,11 +16,10 @@ public class Library extends Application {
     public void start(Stage stage) throws IOException, ClassNotFoundException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("register.fxml"));
 
 
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
       // stage.setResizable(false);
@@ -30,7 +29,7 @@ public class Library extends Application {
 
         stage.setScene(scene);
         stage.show();
-        //stage.setFullScreen(true);
+
 //        DataBase bd=new DataBase();
 //        bd.connect();
     }
