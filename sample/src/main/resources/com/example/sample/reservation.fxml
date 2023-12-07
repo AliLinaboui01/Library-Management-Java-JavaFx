@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="775.0" prefWidth="490.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.ReservationController">
+   <children>
+      <Label alignment="CENTER" layoutY="40.0" prefHeight="30.0" prefWidth="490.0" text="Fill Up the Details" textFill="#4d4d4d">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="97.0" prefHeight="30.0" prefWidth="59.0" text="From">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="36.0" layoutY="149.0" prefHeight="51.0" prefWidth="374.0" spacing="50.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="07" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="12" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2023" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="36.0" layoutY="274.0" prefHeight="51.0" prefWidth="374.0" spacing="50.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="17" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="12" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2023" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/down.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <Label layoutX="56.0" layoutY="226.0" prefHeight="30.0" prefWidth="59.0" text="To">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="391.0" prefHeight="30.0" prefWidth="138.0" text="Book Serial No">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="58.0" layoutY="442.0" prefHeight="51.0" prefWidth="374.0" promptText="enter  Book Number" style="-fx-border-color: #d6d6d6; -fx-border-radius: 5;" styleClass="transparent" stylesheets="@css/style.css" />
+      <Label layoutX="56.0" layoutY="519.0" prefHeight="30.0" prefWidth="138.0" text="Description">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="59.0" layoutY="549.0" prefHeight="81.0" prefWidth="374.0" promptText="purpose" style="-fx-border-color: #d6d6d6; -fx-border-radius: 5;" styleClass="transparent" stylesheets="@css/style.css" />
+      <Button fx:id="borrowButton" layoutX="67.0" layoutY="686.0" mnemonicParsing="false" onAction="#borrow" prefHeight="43.0" prefWidth="155.0" style="-fx-background-color: #F27851; -fx-cursor: hand;" stylesheets="@css/style.css" text="BORROW" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelButton" layoutX="289.0" layoutY="686.0" mnemonicParsing="false" onAction="#cancel" prefHeight="43.0" prefWidth="155.0" style="-fx-background-color: #d6d6d6; -fx-cursor: hand;" stylesheets="@css/style.css" text="cancel" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

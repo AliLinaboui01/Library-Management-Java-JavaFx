@@ -16,7 +16,7 @@ public class Library extends Application {
     public void start(Stage stage) throws IOException, ClassNotFoundException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("bookDetails.fxml"));
 
 
 
@@ -27,11 +27,9 @@ public class Library extends Application {
         stage.setTitle("LibraryCom");
 
         stage.setScene(scene);
-//        stage.setFullScreen(true);
+        stage.setFullScreen(true);
         stage.show();
 
-//        DataBase bd=new DataBase();
-//        bd.connect();
     }
 
     public static void main(String[] args) {
