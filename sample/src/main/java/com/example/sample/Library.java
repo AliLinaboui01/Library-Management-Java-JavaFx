@@ -16,7 +16,7 @@ public class Library extends Application {
     public void start(Stage stage) throws IOException, ClassNotFoundException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("profile.fxml"));
 
 
 
@@ -25,9 +25,9 @@ public class Library extends Application {
       // stage.setResizable(false);
 
         stage.setTitle("LibraryCom");
+        stage.getIcons().add(new Image("C:\\Users\\DELL 6430\\abdelmalek sadi\\Desktop\\gitcolab\\Library-Management-Java-JavaFx\\sample\\src\\main\\resources\\com\\example\\sample\\imgs\\new_bg.png"));
 
         stage.setScene(scene);
-//        stage.setFullScreen(true);
         stage.show();
 
 //        DataBase bd=new DataBase();
