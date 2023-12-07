@@ -39,7 +39,7 @@ public class RegisterController {
 
     @FXML
     private Button registerButton;
-    private final SendMail sendMail = new SendMail("alilinaboui@gmail.com", "eyoc hrcz jumz crbg");
+    private final SendMail sendMail = new SendMail("akkaouih13@gmail.com", "pffp frfv rwgg mmxn");
     public void register(ActionEvent e) {
 
         String mailUser = email.getText();
@@ -47,7 +47,7 @@ public class RegisterController {
         String verificationCode = generateVerificationCode();
 //        System.out.println(verificationCode);
         try {
-            sendMail.SendVerificationMail(mailUser, verificationCode);
+            sendMail.SendVerificationMail(mailUser,verificationCode);
             System.out.println("Verification email sent successfully.");
         } catch (MessagingException ex) {
             ex.printStackTrace();
