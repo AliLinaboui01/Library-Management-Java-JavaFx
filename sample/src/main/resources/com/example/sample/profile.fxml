@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.ProfileController">
     <left>
         <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="306.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
             <children>
@@ -34,11 +34,11 @@
                                         <Image url="@imgs/icons8-home.png" />
                                     </image>
                                 </ImageView>
-                                <Label prefHeight="17.0" prefWidth="67.0" styleClass="font-gara" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
+                        <Button mnemonicParsing="false" onAction="#goToHome" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
                             </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
@@ -48,11 +48,11 @@
                                         <Image url="@imgs/icons8-search1.png" />
                                     </image>
                                 </ImageView>
-                                <Label prefHeight="17.0" prefWidth="68.0" styleClass="font-gara" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
+                        <Button mnemonicParsing="false" onAction="#goToAllBooks" styleClass="transparent" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
                             </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0">
@@ -62,14 +62,11 @@
                                         <Image url="@imgs/icons8-book-shelf-48.png" />
                                     </image>
                                 </ImageView>
-                                <Label prefHeight="27.0" prefWidth="70.0" styleClass="font-gara" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
-                                    <HBox.margin>
-                                        <Insets left="10.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
+                        <Button mnemonicParsing="false" onAction="#goToMyshelf" prefHeight="39.0" prefWidth="101.0" styleClass="transparent" stylesheets="@css/style.css" text=" My Shelf" textFill="#8a8a8a">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
                             </children>
                         </HBox>
                     </children>
@@ -356,12 +353,12 @@
                                     </VBox>
                                     <VBox prefHeight="100.0" prefWidth="379.0" spacing="8.0">
                                        <children>
-                                          <Label prefHeight="18.0" prefWidth="266.0" text="College Email ID" textFill="#4c535f">
+                                          <Label prefHeight="18.0" prefWidth="266.0" text="phone number" textFill="#4c535f">
                                              <font>
                                                 <Font name="Inter Regular" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField prefHeight="34.0" prefWidth="325.0" promptText="Kensoncs.official@college.com" />
+                                          <TextField prefHeight="34.0" prefWidth="325.0" promptText="0777322292" />
                                        </children>
                                     </VBox>
                                  </children>
