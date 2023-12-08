@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="775.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.SuccessReservationController">
+<AnchorPane prefHeight="775.0" prefWidth="490.0" style="-fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.SuccessReservationController">
    <children>
       <Label alignment="CENTER" layoutY="131.0" prefHeight="35.0" prefWidth="492.0" text="Process Completed">
          <font>
@@ -20,7 +19,7 @@
             <Image url="@imgs/check.png" />
          </image>
       </ImageView>
-      <Button layoutX="168.0" layoutY="617.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="155.0" style="-fx-background-color: #F27851; -fx-cursor: hand;" stylesheets="@css/style.css" text="Back" textFill="WHITE">
+      <Button fx:id="backButuon" layoutX="168.0" layoutY="617.0" mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="155.0" style="-fx-background-color: #F27851; -fx-cursor: hand;" stylesheets="@css/style.css" text="Back" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

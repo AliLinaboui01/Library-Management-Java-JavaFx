@@ -6,6 +6,7 @@ public class Book {
     private String author;
     private String possibility;
     private String previewButton;
+    private Boolean isFavorite = false;
 
     private String rating;
     public void setName(String name) {
@@ -54,5 +55,13 @@ public class Book {
 
     public void setPreviewButton(String previewButton) {
         this.previewButton = previewButton;
+    }
+
+    public Boolean getFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(Boolean favorite) {
+        isFavorite = favorite;
     }
 }
