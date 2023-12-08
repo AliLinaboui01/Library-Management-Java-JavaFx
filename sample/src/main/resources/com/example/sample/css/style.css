@@ -24,7 +24,7 @@
     -fx-cursor: hand;
 }
 .shadow{
-    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1) , 10 , 0 , 0 , 10 );
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1) , 10 , 0 , 0 , 10 ) ;
 }
 
 #myImageView {
@@ -110,5 +110,15 @@
     -fx-border-color: #F76B56;
 }
 
+
+.grad{
+    -fx-background-color:#ff4e50;  /* fallback for old browsers */
+    -fx-background-color:-webkit-linear-gradient(to right, #ff4e50, #f9d423);   /* Chrome 10-25, Safari 5.1-6 */
+    -fx-background-color: linear-gradient(to right, #ff4e50, #f9d423);
+}
+.opacity {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+/* styles.css */
 
 
