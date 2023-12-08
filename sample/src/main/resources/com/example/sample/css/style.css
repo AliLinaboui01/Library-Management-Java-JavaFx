@@ -105,5 +105,8 @@
     -fx-background-color:  #41B64D;
 }
 .buttom-color{
-
+}
+.round-layout3{
+    -fx-border-radius: 7;
+    -fx-border-color: #F76B56;
 }

@@ -7,7 +7,7 @@ public class Book {
     private String possibility;
     private String previewButton;
 
-    private double rating;
+    private String rating;
     public void setName(String name) {
         this.name = name;
     }
@@ -32,11 +32,11 @@ public class Book {
         this.author = author;
     }
 
-    public double getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
