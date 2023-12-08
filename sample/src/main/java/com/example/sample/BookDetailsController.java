@@ -35,7 +35,6 @@ public class BookDetailsController {
 
             // Set the owner of the dialog to the current stage
             dialog.initOwner(currentStage);
-
             // Show the dialog
             dialog.showAndWait();
 

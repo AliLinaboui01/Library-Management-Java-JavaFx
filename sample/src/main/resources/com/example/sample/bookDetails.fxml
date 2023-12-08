@@ -24,72 +24,60 @@
             </ImageView>
             <VBox prefHeight="147.0" prefWidth="221.0" spacing="12.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imgs/icons8-home.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="17.0" prefWidth="67.0" styleClass="font-gara" stylesheets="@css/style.css" text="Home" textFill="#8a8a8a">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imgs/icons8-search1.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="17.0" prefWidth="68.0" styleClass="font-gara" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Searsh" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0">
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imgs/icons8-book-shelf-48.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="27.0" prefWidth="70.0" styleClass="font-gara" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <Pane prefHeight="265.0" prefWidth="306.0" VBox.vgrow="ALWAYS" />
-            <VBox alignment="TOP_CENTER" prefHeight="119.0" prefWidth="221.0" spacing="12.0">
+            <Pane prefHeight="290.0" prefWidth="306.0" VBox.vgrow="ALWAYS" />
+            <VBox alignment="CENTER" prefHeight="119.0" prefWidth="221.0" spacing="5.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="134.0" text="About" textFill="#8a8a8a">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="22.0" prefWidth="134.0" text="Logout" textFill="#8a8a8a">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="22.0" prefWidth="134.0" text="Terms &amp; Condition" textFill="#8a8a8a">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" style="-fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="About" textFill="#8a8a8a" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" style="-fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Logout" textFill="#8a8a8a" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" style="-fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Terms &amp; conditions" textFill="#8a8a8a" />
                </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
                <padding>
                   <Insets bottom="20.0" />
                </padding>
@@ -103,7 +91,7 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="846.0" prefWidth="1191.0" spacing="27.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="846.0" prefWidth="1191.0" spacing="27.0" style="-fx-background-color: #f3f3f3;" HBox.hgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1188.0" spacing="20.0" styleClass="white-background" stylesheets="@css/style.css">
                      <children>
@@ -150,27 +138,27 @@
                            </children>
                         </HBox>
                         <HBox prefHeight="52.0" prefWidth="237.0" HBox.hgrow="ALWAYS" />
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="5.0" styleClass="round-layout" stylesheets="@css/style.css">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="37.0" prefWidth="146.0" spacing="5.0" styleClass="round-layout" stylesheets="@css/style.css">
                            <children>
-                              <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="32.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imgs/4645949.png" />
+                                    <Image url="@imgs/aliProfile.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </ImageView>
-                              <Label text="Ali Linaboui">
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="106.0" text="Ali Linaboui" textFill="#4d4d4d">
                                  <font>
-                                    <Font name="Arial" size="13.0" />
+                                    <Font name="Arial" size="12.0" />
                                  </font>
                               </Label>
                            </children>
                            <HBox.margin>
-                              <Insets left="5.0" />
+                              <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="3.0" />
+                              <Insets left="5.0" />
                            </padding>
                         </HBox>
                      </children>
@@ -478,7 +466,7 @@
                                     <String fx:value="raduis2" />
                                  </styleClass>
                                  <padding>
-                                    <Insets left="15.0" />
+                                    <Insets left="15.0" top="10.0" />
                                  </padding>
                                  <HBox.margin>
                                     <Insets left="200.0" />
@@ -670,7 +658,7 @@
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="928.0" text="    Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru Steve Krug’s guide to help&#10;    them understand the principles of intuitive navigation and information design. Witty, commonsensical, and eminently practical, it’s one of the best-loved and most...  &#10;  " textFill="#666666" />
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="928.0" text="    Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru Steve Krug’s guide to help&#10;    them understand the principles of intuitive navigation and information design. Witty, commonsensical, and eminently practical, it’s one of the best-loved and most...  &#10;  " textFill="#666666" />
                                  </children>
                                  <padding>
                                     <Insets left="5.0" top="10.0" />

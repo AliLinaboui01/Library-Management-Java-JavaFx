@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DataBase {
     Connection conn = null;
-    String url = "jdbc:mysql://localhost:3306/connect";
+    String url = "jdbc:mysql://localhost:3306/library";
     String user = "root";
     String password = "";
     public DataBase(){}

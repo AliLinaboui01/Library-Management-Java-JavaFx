@@ -149,21 +149,19 @@
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="134.0" prefWidth="126.0">
+      <VBox alignment="CENTER" prefHeight="134.0" prefWidth="119.0">
          <children>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageLove" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imgs/love.png" />
+                  <Image url="@imgs/love!.png" />
                </image>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
             </ImageView>
+            <Button fx:id="loveButton" mnemonicParsing="false" onAction="#loveBook" style="-fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" />
          </children>
-      </HBox>
+      </VBox>
       <VBox alignment="CENTER" prefHeight="134.0" prefWidth="142.0">
          <children>
-            <Button fx:id="previewButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #ffffff; -fx-border-color: #F76B56; -fx-border-radius: 5; -fx-cursor: hand;" stylesheets="@css/style.css" text="Preview" textFill="#f76b56" />
+            <Button fx:id="previewButton" alignment="CENTER" mnemonicParsing="false" onAction="#getBookDetails" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #ffffff; -fx-border-color: #F76B56; -fx-border-radius: 5; -fx-cursor: hand;" stylesheets="@css/style.css" text="Preview" textFill="#f76b56" />
          </children>
       </VBox>
    </children>
