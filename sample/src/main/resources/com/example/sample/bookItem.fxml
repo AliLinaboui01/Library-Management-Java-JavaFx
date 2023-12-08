@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,16 +9,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="160.0" styleClass="white-backgroundB" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookItemController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#goTobookDetails" prefHeight="210.0" prefWidth="160.0" styleClass="white-backgroundB" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookItemController">
    <children>
-      <ImageView fx:id="imgbook" fitHeight="112.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imgs/RICHEST.jpeg" />
-         </image>
-         <VBox.margin>
-            <Insets top="20.0" />
-         </VBox.margin>
-      </ImageView>
+      <Button mnemonicParsing="false" onAction="#goTobookDetails" prefHeight="20.0" prefWidth="39.0" styleClass="transparent" stylesheets="@css/style.css">
+         <graphic>
+            <ImageView fx:id="imgbook" fitHeight="112.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/RICHEST.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
       <HBox prefHeight="18.0" prefWidth="160.0">
          <children>
             <Label fx:id="titlebook" prefHeight="22.0" prefWidth="155.0" styleClass="font-gara" stylesheets="@css/style.css" text="Don’t Make Me think" textFill="#4d4d4d">

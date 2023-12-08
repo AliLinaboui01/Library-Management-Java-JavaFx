@@ -45,18 +45,7 @@
     </dependency>
 
     <!-- Activation Dependency -->
-    <dependency>
-      <groupId>javax.activation</groupId>
-      <artifactId>javax.activation-api</artifactId>
-      <version>1.2.0</version>
-    </dependency>
 
-    <!-- JavaMail Dependency -->
-    <dependency>
-      <groupId>com.sun.mail</groupId>
-      <artifactId>javax.mail</artifactId>
-      <version>1.6.2</version>
-    </dependency>
   </dependencies>
 
   <!-- Build Configuration -->

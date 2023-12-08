@@ -32,11 +32,11 @@
                               <Image url="@imgs/icons8-home.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="17.0" prefWidth="67.0" styleClass="font-gara" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
+                        <Button mnemonicParsing="false" onAction="#goToHome" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
                            <font>
-                              <Font name="Inter Regular" size="18.0" />
+                              <Font size="18.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
@@ -46,11 +46,11 @@
                               <Image url="@imgs/icons8-search1.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="17.0" prefWidth="68.0" styleClass="font-gara" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
+                        <Button mnemonicParsing="false" onAction="#goToAllBooks" styleClass="transparent" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
                            <font>
                               <Font size="18.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0">
@@ -60,14 +60,11 @@
                               <Image url="@imgs/téléchargement%20(2).png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="27.0" prefWidth="70.0" styleClass="font-gara" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
+                        <Button mnemonicParsing="false" onAction="#goToMyshelf" styleClass="transparent" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
                            <font>
                               <Font size="18.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
                </children>
@@ -145,28 +142,21 @@
                            </children>
                         </HBox>
                         <HBox prefHeight="52.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="32.0" styleClass="round-layout" stylesheets="@css/style.css">
-                           <children>
-                              <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@imgs/4645949.png" />
-                                 </image>
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                              </ImageView>
-                              <Label text="Kenson">
-                                 <font>
-                                    <Font name="Arial" size="13.0" />
-                                 </font>
-                              </Label>
-                           </children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="2.0" styleClass="round-layout" stylesheets="@css/style.css">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                            <padding>
                               <Insets left="5.0" />
                            </padding>
+                           <children>
+                              <ImageView fitHeight="28.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/roundProfile.png" />
+                                 </image>
+                              </ImageView>
+                              <Button mnemonicParsing="false" onAction="#gotoProfile" prefHeight="25.0" prefWidth="115.0" styleClass="transparent" stylesheets="@css/style.css" text="Hamza " />
+                           </children>
                         </HBox>
                      </children>
                   </HBox>
