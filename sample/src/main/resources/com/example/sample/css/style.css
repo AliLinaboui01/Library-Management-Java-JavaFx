@@ -122,3 +122,14 @@
 /* styles.css */
 
 
+.mouse-moved-admin:hover{
+    -fx-background-color: #EDF4FF;
+    -fx-cursor: hand;
+
+}
+.text-color{
+    -fx-text-fill: #aeb9be;
+}
+.text-color:hover{
+    -fx-text-fill: #0561FC;
+}
