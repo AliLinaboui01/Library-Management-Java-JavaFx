@@ -39,21 +39,46 @@ public class RegisterController {
 
     @FXML
     private Button registerButton;
-    private final SendMail sendMail = new SendMail("akkaouih13@gmail.com", "pffp frfv rwgg mmxn");
+    private final SendMail sendMail = new SendMail("alilinaboui@gmail.com", "gpmo chhj lapm uzwf");
     public void register(ActionEvent e) {
-
         String mailUser = email.getText();
 
-        String verificationCode = generateVerificationCode();
-//        System.out.println(verificationCode);
-        try {
-            sendMail.SendVerificationMail(mailUser,verificationCode);
-            System.out.println("Verification email sent successfully.");
-        } catch (MessagingException ex) {
-            ex.printStackTrace();
-            System.out.println("Error sending verification email.");
+        // Define the regular expression for the email pattern
+        String emailPattern = "^[a-zA-Z]+\\.[a-zA-Z]+@etu\\.uae\\.ac\\.ma$";
+
+        // Check if the entered email matches the pattern
+        if (mailUser.matches(emailPattern)) {
+            String verificationCode = generateVerificationCode();
+
+            try {
+                sendMail.SendVerificationMail(mailUser, verificationCode);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("registerVerification.fxml"));
+//                loader.setController(new RegisterVerificationController(verificationCode));
+                Parent root = loader.load();
+
+                // Create a new scene
+                Scene nextScene = new Scene(root);
+
+                // Get the Stage from the current Node (you can adjust this if needed)
+                Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                currentStage.setScene(nextScene);
+                currentStage.show();
+
+                System.out.println("Verification email sent successfully.");
+            } catch (MessagingException ex) {
+                ex.printStackTrace();
+                System.out.println("Error sending verification email.");
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        } else {
+            System.out.println("Invalid email format. Please enter a valid email address.");
+            // You might want to display an error message to the user.
         }
     }
+
     public void goLogin(ActionEvent e){
         try {
 //             Load the FXML file for the register scene

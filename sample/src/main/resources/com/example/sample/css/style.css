@@ -125,11 +125,34 @@
 .mouse-moved-admin:hover{
     -fx-background-color: #EDF4FF;
     -fx-cursor: hand;
-
 }
 .text-color{
     -fx-text-fill: #aeb9be;
 }
 .text-color:hover{
     -fx-text-fill: #0561FC;
+}
+.my_text{
+    -fx-text-fill: #C4CCD0;
+}
+.my_text:hover{
+    -fx-text-fill: #0561FC;
+    -fx-cursor: hand;
+}
+.node{
+    -fx-stroke: #0561FC;
+}
+
+.active{
+    -fx-background-color: #EDF4FF;
+    -fx-cursor: hand;
+}
+.active1{
+    -fx-text-fill: #0561FC;
+}
+.search{
+    -fx-background-color:  #F8FAFB;
+}
+.bar{
+    -fx-background-color: #F7F9FA;
 }

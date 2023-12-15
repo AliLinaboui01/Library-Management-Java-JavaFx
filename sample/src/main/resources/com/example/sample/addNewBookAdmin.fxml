@@ -2,12 +2,10 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.AdminHomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.AddNewBookAdminController">
    <left>
       <VBox prefHeight="890.0" prefWidth="270.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -33,17 +31,12 @@
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
-                              <String fx:value="active1" />
                            </styleClass>
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
                      </children>
-                     <styleClass>
-                        <String fx:value="mouse-moved-admin" />
-                        <String fx:value="active" />
-                     </styleClass>
                   </HBox>
                </children>
                <padding>
@@ -102,7 +95,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="156.0" prefHeight="63.0" prefWidth="270.0">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -113,12 +106,17 @@
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
+                              <String fx:value="active1" />
                            </styleClass>
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
                      </children>
+                     <styleClass>
+                        <String fx:value="mouse-moved-admin" />
+                        <String fx:value="active" />
+                     </styleClass>
                   </HBox>
                </children>
                <padding>
@@ -293,7 +291,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="522.0" spacing="5.0" style="-fx-background-color: #F8FAFB; -fx-background-radius: 5;">
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="522.0" spacing="5.0" style="-fx-background-radius: 5;" styleClass="search">
                <children>
                   <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -348,6 +346,7 @@
                      <styleClass>
                         <String fx:value="transparent" />
                         <String fx:value="white-background" />
+                        <String fx:value="mouse-moved-admin" />
                      </styleClass>
                   </Button>
                </children>
@@ -359,198 +358,76 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+         </padding>
          <children>
-            <Label prefHeight="34.0" prefWidth="70.0" text="Analytics" textAlignment="JUSTIFY">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="1014.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="944.0" spacing="10.0" stylesheets="@css/style.css">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="95.0" text="Books" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label text="36">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="+55%" textFill="#82d616">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-group-of-projects-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="95.0" text="Users" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label text="5">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-user-groups-80.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="210.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="95.0" text="New Users" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label text="20">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-new-contact-64.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="410.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="107.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="139.0" text="Reservations" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label text="10">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-scoreboard-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/icons8-add-book-96.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="194.0" style="-fx-background-color: #EDF4FF; -fx-background-radius: 5;" text="Add New Book">
+                     <font>
+                        <Font name="Eras Light ITC" size="16.0" />
+                     </font>
+                  </Label>
                </children>
+               <styleClass>
+                  <String fx:value="white-background" />
+                  <String fx:value="raduis" />
+               </styleClass>
             </HBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="1020.0" style="-fx-background-radius: 15;" styleClass="white-background" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="586.0" prefWidth="944.0" stylesheets="@css/style.css">
+               <styleClass>
+                  <String fx:value="white-background" />
+                  <String fx:value="raduis" />
+                  <String fx:value="shadow" />
+               </styleClass>
                <children>
-                  <HBox prefHeight="52.0" prefWidth="755.0" spacing="20.0" style="-fx-background-radius: 15;" styleClass="white-background" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <Label prefHeight="26.0" prefWidth="77.0" text="Report">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="591.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" stylesheets="@css/style.css" text="Day">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-text-fill: #0561FC;" styleClass="transparent" stylesheets="@css/style.css" text="Week">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" stylesheets="@css/style.css" text="Month">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" stylesheets="@css/style.css" text="Year">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </HBox>
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Title Book" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="language" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Author Name" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
                      </children>
-                     <padding>
-                        <Insets left="20.0" top="15.0" />
-                     </padding>
                   </HBox>
-                  <LineChart fx:id="lineChart" prefHeight="361.0" prefWidth="974.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="node" />
-                     </styleClass>
-                  </LineChart>
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
+                     <children>
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Category" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Pages" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Quantity" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="304.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
+                     <children>
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="ISBN" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="ratting" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="334.0" style="-fx-text-fill: #0561FC; -fx-background-color: #DFF0FF; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Upload Image Book" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="348.0" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
+                     <children>
+                        <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="326.0" promptText="Description" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" stylesheets="@css/style.css" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
+                     <children>
+                        <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="210.0" style="-fx-text-fill: #78C278; -fx-background-color: #E6FDE6; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Submit" />
+                     </children>
+                  </HBox>
                </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </VBox>
          </children>
-         <padding>
-            <Insets left="50.0" right="50.0" top="25.0" />
-         </padding>
+         <opaqueInsets>
+            <Insets bottom="20.0" />
+         </opaqueInsets>
       </VBox>
    </center>
 </BorderPane>

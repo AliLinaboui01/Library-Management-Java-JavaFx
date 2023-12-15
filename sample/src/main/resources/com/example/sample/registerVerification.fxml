@@ -34,7 +34,7 @@
             </HBox>
             <AnchorPane prefHeight="497.0" prefWidth="400.0">
                <children>
-                  <Button fx:id="loginButton" layoutX="50.0" layoutY="304.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="286.0" style="-fx-background-color: #FA7C54; -fx-cursor: hand; -fx-background-radius: 20;" text="Verify" textFill="WHITE">
+                  <Button fx:id="verify" layoutX="50.0" layoutY="304.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="286.0" style="-fx-background-color: #FA7C54; -fx-cursor: hand; -fx-background-radius: 20;" text="Verify" textFill="WHITE">
                      <font>
                         <Font name="Berlin Sans FB" size="14.0" />
                      </font>
@@ -52,7 +52,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="50.0" layoutY="157.0" prefHeight="82.0" prefWidth="286.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #4d4d4d;" styleClass="transparent" stylesheets="@css/style.css">
+                  <TextField fx:id="codeVerification" layoutX="50.0" layoutY="157.0" prefHeight="82.0" prefWidth="286.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #4d4d4d;" styleClass="transparent" stylesheets="@css/style.css">
                      <font>
                         <Font size="36.0" />
                      </font>
