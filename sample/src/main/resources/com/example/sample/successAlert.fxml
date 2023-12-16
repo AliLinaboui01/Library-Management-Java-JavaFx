@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="151.0" prefWidth="846.0" spacing="20.0" style="-fx-background-color: #E6FDE6; -fx-background-radius: 25;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.successAlertController">
+   <children>
+      <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+         <image>
+            <Image url="@imgs/icons8-success-80.png" />
+         </image>
+      </ImageView>
+      <Label prefHeight="52.0" prefWidth="536.0" style="-fx-text-fill: #78C278;" styleClass="transparent" stylesheets="@css/style.css" text="Success Added! ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_RIGHT" prefHeight="151.0" prefWidth="194.0">
+         <children>
+            <Button fx:id="closeButton" mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="31.0" style="-fx-background-color: F35746; -fx-cursor: hand;" styleClass="transparent" text="X" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="transparent" />
+      <String fx:value="shadow" />
+   </styleClass>
+</HBox>
