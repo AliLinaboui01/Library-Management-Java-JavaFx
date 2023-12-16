@@ -390,33 +390,33 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Title Book" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="language" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Author Name" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="titleBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Title Book" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="languageBookInput" prefHeight="42.0" prefWidth="325.0" promptText="language" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="authorBookInput" layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Author Name" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Category" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="Pages" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Quantity" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="categoryBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Category" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="pagesBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Pages" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="quantityBookInput" layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Quantity" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="20.0" layoutY="304.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="ISBN" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <TextField fx:id="isbnBookInput" prefHeight="42.0" prefWidth="325.0" promptText="ISBN" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
                         <TextField prefHeight="42.0" prefWidth="325.0" promptText="ratting" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="334.0" style="-fx-text-fill: #0561FC; -fx-background-color: #DFF0FF; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Upload Image Book" />
+                        <Button fx:id="uploadImageButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="334.0" style="-fx-text-fill: #0561FC; -fx-background-color: #DFF0FF; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Upload Image Book" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="20.0" layoutY="348.0" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="326.0" promptText="Description" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" stylesheets="@css/style.css" />
+                        <TextArea fx:id="descriptionBookInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="326.0" promptText="Description" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" stylesheets="@css/style.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="210.0" style="-fx-text-fill: #78C278; -fx-background-color: #E6FDE6; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Submit" />
+                        <Button fx:id="submitButton" layoutX="367.0" layoutY="36.0" mnemonicParsing="false" onAction="#addNewBookHere" prefHeight="38.0" prefWidth="210.0" style="-fx-text-fill: #78C278; -fx-background-color: #E6FDE6; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Submit" />
                      </children>
                   </HBox>
                </children>
