@@ -12,14 +12,16 @@ public class DataBase {
 
 
 
-    public void connect(){
-
+    public Connection connect(){
+        Connection conn = null;
         try {
-            Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("good job success connection ");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        return conn;
 
     }
 
