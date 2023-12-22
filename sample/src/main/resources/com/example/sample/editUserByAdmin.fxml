@@ -4,9 +4,11 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.AllUsersController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <VBox prefHeight="890.0" prefWidth="270.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
             <children>
@@ -43,7 +45,7 @@
                         <Insets left="20.0" right="20.0" />
                     </padding>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="30.0" prefHeight="63.0" prefWidth="270.0" stylesheets="@css/style.css">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="30.0" prefHeight="63.0" prefWidth="270.0">
                     <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10; -fx-background-color: #EDF4FF;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
                             <children>
@@ -52,7 +54,7 @@
                                         <Image url="@imgs/icons8-users-64.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToAlluser" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -314,82 +316,137 @@
         </HBox>
     </top>
     <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <Label prefHeight="34.0" prefWidth="70.0" text="Users" textAlignment="JUSTIFY">
-                    <font>
-                        <Font name="System Bold" size="16.0" />
-                    </font>
-                </Label>
-            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="58.0" prefWidth="156.0" spacing="5.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#goToFormAddUser" prefHeight="20.0" prefWidth="76.0" stylesheets="@css/style.css" text="Add New" textFill="#8392ab">
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="white-background" />
-                           </styleClass>
-                        </Button>
-                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-add-new-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="58.0" prefWidth="945.0" spacing="145.0" styleClass="white-background" stylesheets="@css/style.css">
-               <children>
-                  <Label prefHeight="74.0" prefWidth="156.0" text="USER" textFill="#8392ab">
-                     <font>
-                        <Font name="Inter Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="58.0" prefWidth="252.0" text="FUNCTION" textFill="#8392ab">
-                     <font>
-                        <Font name="Inter Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="74.0" prefWidth="156.0" text="CREATED DATE" textFill="#8392ab">
-                     <font>
-                        <Font name="Inter Regular" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="-183.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label prefHeight="74.0" prefWidth="156.0" text="Action" textFill="#8392ab">
-                     <font>
-                        <Font name="Inter Regular" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="150.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-            </HBox>
-            <ScrollPane prefHeight="656.0" prefWidth="600.0" stylesheets="@css/style.css">
-               <content>
-                  <VBox fx:id="AllUseresVbox" prefHeight="668.0" prefWidth="1175.0" spacing="15.0" styleClass="white-background" stylesheets="@css/style.css">
-                     <padding>
-                        <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-               </content>
-               <styleClass>
-                  <String fx:value="transparent" />
-                  <String fx:value="transparent-scroll-pane" />
-               </styleClass>
-            </ScrollPane>
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="825.0" stylesheets="@css/style.css">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="editUserName" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="344.0" text="Edit USER" textFill="#4d4d4d">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                            <children>
+                                <HBox prefHeight="162.0" prefWidth="925.0" spacing="10.0">
+                                    <children>
+                                        <VBox prefHeight="125.0" prefWidth="342.0">
+                                            <children>
+                                                <TextField fx:id="UserFirstName" prefHeight="42.0" prefWidth="345.0" promptText="First Name" style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="125.0" prefWidth="342.0">
+                                            <children>
+                                                <TextField fx:id="UserLastName" prefHeight="43.0" prefWidth="342.0" promptText="Last Name" style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="162.0" prefWidth="925.0" spacing="10.0">
+                                    <children>
+                                        <VBox prefHeight="125.0" prefWidth="342.0">
+                                            <children>
+                                                <TextField fx:id="UserCne" prefHeight="43.0" prefWidth="342.0" promptText="Cne " style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="52.0" prefWidth="342.0">
+                                            <children>
+                                                <TextField fx:id="UserName" prefHeight="42.0" prefWidth="345.0" promptText="UserName" style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                            </padding>
+                        </VBox>
+                        <VBox prefHeight="71.0" prefWidth="965.0" spacing="20.0">
+                            <children>
+                                <HBox prefHeight="58.0" prefWidth="925.0" spacing="10.0">
+                                    <children>
+                                        <VBox prefHeight="125.0" prefWidth="342.0">
+                                            <children>
+                                                <TextField fx:id="UserEmail" prefHeight="42.0" prefWidth="345.0" promptText="email" style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="38.0" prefWidth="342.0">
+                                 <children>
+                                    <PasswordField fx:id="UserPassword" prefHeight="42.0" prefWidth="342.0" promptText="password" style="-fx-background-radius: 5;" />
+                                 </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                            </padding>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="785.0" spacing="10.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#uploadImage" prefHeight="43.0" prefWidth="258.0" style="-fx-background-color: #DFF0FF; -fx-cursor: hand;" styleClass="raduis" stylesheets="@css/style.css" text="Update Picture" textFill="#0561fc" />
+                                <ImageView fx:id="validateImage" fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@imgs/icons8-change-user-40.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox prefHeight="52.0" prefWidth="965.0">
+                            <children>
+                                <Label prefHeight="26.0" prefWidth="268.0" text="FUNCTION" textFill="#aeb9be">
+                                    <font>
+                                        <Font name="Corbel Light Italic" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox prefHeight="36.0" prefWidth="785.0" spacing="12.0">
+                            <children>
+                                <RadioButton mnemonicParsing="false" text="Student" textFill="#aeb9be">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="role" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton mnemonicParsing="false" text="Admin" textFill="#aeb9be" toggleGroup="$role" />
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="824.0">
+                            <children>
+                                <Button fx:id="editImageUser" mnemonicParsing="false" onAction="#EditUser" prefHeight="37.0" prefWidth="314.0" style="-fx-background-color: #E6FDE6; -fx-cursor: hand;" stylesheets="@css/style.css" text="SUBMIT" textFill="#78c278">
+                                    <font>
+                                        <Font name="Inter Bold" size="13.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="shadow" />
+                                        <String fx:value="gradient" />
+                                        <String fx:value="raduis" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="30.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="white-background" />
+                    </styleClass>
+                </VBox>
             </children>
-            <padding>
-                <Insets left="50.0" right="50.0" top="25.0" />
-            </padding>
         </VBox>
     </center>
 </BorderPane>

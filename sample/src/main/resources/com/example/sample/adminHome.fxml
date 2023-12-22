@@ -59,7 +59,7 @@
                               <Image url="@imgs/icons8-users-64.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToPageUsers" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />

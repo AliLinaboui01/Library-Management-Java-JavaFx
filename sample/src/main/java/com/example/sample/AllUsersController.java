@@ -1,5 +1,6 @@
 package com.example.sample;
 
+import BD.DataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,10 @@ import model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,20 +33,21 @@ public class AllUsersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = getUsers();
+List<User> allUseres = users;
 
-
-        for (User user : users) {
+        for (User user : allUseres) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("UserCompenent.fxml"));
             HBox userBox;
             try {
                 userBox= fxmlLoader.load();
+                UserCompenentController userCompenentController = fxmlLoader.getController();
+                userCompenentController.setData(user);
+                AllUseresVbox.getChildren().add(userBox);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            UserCompenentController userCompenentController = fxmlLoader.getController();
-            userCompenentController.setData(user);
-            AllUseresVbox.getChildren().add(userBox);
+
 
         }
 
@@ -49,77 +55,34 @@ public class AllUsersController implements Initializable {
     }
 
     public List<User> getUsers() {
+        DataBase dataBase = new DataBase();
+        Connection connection = dataBase.connect();
         List<User> userList = new ArrayList<>();
+        String query = "SELECT * FROM Users";
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
 
-        User user = new User();
-        user.setCne("CNE123");
-        user.setEmail("user1@example.com");
-        user.setFirstName("John");
-        user.setImage("imgs/aliProfile.png");
-        user.setLastName("Doe");
-        user.setPassword("password1");
-        user.setUsername("john_doe");
-        user.setUserType("regular");
-        user.setCreatedDate(new Date()); // Set the createdDate for user1
-        userList.add(user);
+            while (resultSet.next()) {
+                User user = new User();
+                user.setCne(resultSet.getString("Cne"));
+                user.setEmail(resultSet.getString("email"));
+                user.setFirstName(resultSet.getString("firstName") );
+               user.setImage(resultSet.getString("image"));
+               // user.setImage(resultSet.getString("image"));
 
-        user = new User();
-        user.setCne("CNE456");
-        user.setEmail("user2@example.com");
-        user.setFirstName("Jane");
-        user.setImage("imgs/aliProfile.png");
-        user.setLastName("Smith");
-        user.setPassword("password2");
-        user.setUsername("jane_smith");
-        user.setCreatedDate(new Date()); // Set the createdDate for user1
-        user.setUserType("admin");
-        userList.add(user);
-
-
-        user = new User();
-        user.setCne("CNE456");
-        user.setEmail("user2@example.com");
-        user.setFirstName("Jane");
-        user.setImage("imgs/aliProfile.png");
-        user.setLastName("Smith");
-        user.setPassword("password2");
-        user.setUsername("jane_smith");
-        user.setUserType("Student");
-        user.setCreatedDate(new Date()); // Set the createdDate for user1
-        userList.add(user);
-
-
-
-        user = new User();
-        user.setCne("CNE456");
-        user.setEmail("user2@example.com");
-        user.setFirstName("Jane");
-        user.setImage("imgs/aliProfile.png");
-        user.setLastName("Smith");
-        user.setPassword("password2");
-        user.setUsername("jane_smith");
-        user.setCreatedDate(new Date()); // Set the createdDate for user1
-        user.setUserType("admin");
-        userList.add(user);
-
-
-
-
-
-        user = new User();
-        user.setCne("CNE456");
-        user.setEmail("user2@example.com");
-        user.setFirstName("Jane");
-        user.setImage("imgs/aliProfile.png");
-        user.setLastName("Smith");
-        user.setPassword("password2");
-        user.setUsername("jane_smith");
-        user.setCreatedDate(new Date()); // Set the createdDate for user1
-        user.setUserType("admin");
-        userList.add(user);
-
-        // Add more users as needed
-
+                user.setLastName(resultSet.getString("lastName"));
+                user.setPassword(resultSet.getString("password"));
+                user.setUserID(resultSet.getInt("userID"));
+                user.setUsername(resultSet.getString("username"));
+                user.setUserType(resultSet.getString("userType"));
+                // Note: Assuming "createdDate" is a date or timestamp column in your database
+                user.setCreatedDate(new Date());
+                userList.add(user);
+            }
+            dataBase.closeConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return userList;
     }
 
@@ -129,7 +92,8 @@ public class AllUsersController implements Initializable {
 //             Load the FXML file for the register scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fromAddUser.fxml"));
             Parent root = loader.load();
-
+           UserCrudController editUserController = new UserCrudController();
+            loader.setController(editUserController);
             // Create a new scene
             Scene nextScene = new Scene(root);
 
