@@ -58,7 +58,7 @@ public class UserCompenentController {
         // Set default image if the user's image path is null
         String imageUrl = user.getImage();
         if (imageUrl == null || imageUrl.isEmpty()) {
-            UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/aliProfile.png"))));
+            UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
         } else {
             try {
                 // Load user's image
@@ -67,13 +67,13 @@ public class UserCompenentController {
                     UserImage.setImage(new Image(stream));
                 } else {
                     // Provide a default image if the stream is null or invalid
-                    UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/aliProfile.png"))));
+                    UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 // Handle the exception (e.g., log an error message)
                 // Provide a default image in case of an exception
-                UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/aliProfile.png"))));
+                UserImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
             }
         }
     }
@@ -97,7 +97,10 @@ public class UserCompenentController {
             Scene nextScene = new Scene(root);
 
             // Get the Stage from the current Node (you can adjust this if needed)
+
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
             // Set the new scene on the stage
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
@@ -126,6 +129,8 @@ public class UserCompenentController {
 
             // Get the Stage from the current Node (you can adjust this if needed)
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
             // Set the new scene on the stage
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
@@ -150,7 +155,8 @@ public class UserCompenentController {
 
             // Get the Stage from the current Node (you can adjust this if needed)
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Set the new scene on the stage
+            currentStage.close();
+
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
 

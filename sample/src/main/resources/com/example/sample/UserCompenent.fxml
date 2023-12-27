@@ -18,19 +18,19 @@
    <children>
       <ImageView fx:id="UserImage" fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@imgs/aliProfile.png" />
+            <Image url="@imgs/users/profile/1703699618843_hamzaakk.jpg" />
          </image>
       </ImageView>
       <VBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="270.0">
          <children>
-            <Label fx:id="UserName" prefHeight="22.0" prefWidth="248.0" text="ALI LINABOUI" textFill="#141414">
+            <Label fx:id="UserName" prefHeight="22.0" prefWidth="248.0" text="HAMZA AKKAOUI" textFill="#141414">
                <font>
                   <Font name="Inter Regular" size="13.0" />
                </font>
             </Label>
             <Label fx:id="UserEmail" prefHeight="19.0" prefWidth="174.0" text="alilinaboui@gmail.com" textFill="#8392ab">
                <font>
-                  <Font name="Inter Regular" size="13.0" />
+                  <Font name="Inter Regular" size="12.0" />
                </font>
             </Label>
          </children>

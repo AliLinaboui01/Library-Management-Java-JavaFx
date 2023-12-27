@@ -45,16 +45,14 @@ public class BooksBorrowdController implements Initializable {
             borrowdCardController.setData(book);
 
 
-
-
             // Check if we need to move to the next row
             if (column == 3) {
                 column = 0;
                 ++row;
             }
 
-            gridborrowdbook.add( bookBox, column++, row);
-            GridPane.setMargin( bookBox, new Insets(15));
+            gridborrowdbook.add(bookBox, column++, row);
+            GridPane.setMargin(bookBox, new Insets(15));
 
         }
     }
@@ -80,7 +78,6 @@ public class BooksBorrowdController implements Initializable {
         book.setImageSrc("imgs/téléchargement.jpeg");
         book.setAuthor("Robert G. Hagstrom");
         ls.add(book);
-
 
 
         book = new Book();
@@ -148,6 +145,32 @@ public class BooksBorrowdController implements Initializable {
         }
 
     }
+
+    @FXML
+    void goToFavoritesBook(ActionEvent event) {
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("favoriteBook.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene
+            Scene nextScene = new Scene(root);
+
+            // Get the Stage from the current Node (you can adjust this if needed)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+            // Set the new scene on the stage
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+
+
     public void goToMyshelf(ActionEvent event) {
         try {
 //             Load the FXML file for the register scene
@@ -159,6 +182,7 @@ public class BooksBorrowdController implements Initializable {
 
             // Get the Stage from the current Node (you can adjust this if needed)
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
             // Set the new scene on the stage
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
