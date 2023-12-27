@@ -13,14 +13,20 @@ public class DataBase {
 
 
     public Connection connect(){
-        Connection conn =null;
+
+       
+
+        Connection conn = null;
         try {
-            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
             System.out.println("good job success connection ");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
         return conn;
+
     }
 
     public void closeConnection() {

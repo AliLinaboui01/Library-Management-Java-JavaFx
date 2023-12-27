@@ -16,7 +16,9 @@ public class Library extends Application {
     @Override
 
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("allBooksAdmin.fxml"));
+
 
 
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
