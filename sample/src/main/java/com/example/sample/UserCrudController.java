@@ -59,78 +59,82 @@ public class UserCrudController implements Initializable {
     private String imagePath;
 
     ActionEvent Initialevent ;
+    @FXML
+    private Label errorEmail;
 
     @FXML
     void AddUser(ActionEvent event) {
-       // UploadImage();
-        String sql = "INSERT INTO Users (Cne, email, firstName, lastName, password, userType,username,image) VALUES (?, ?, ?, ?, ?, ?,?,?)";
+        String sql = "INSERT INTO Users (Cne, email, firstName, lastName, password, userType, username, image,createdDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?,CURRENT_TIMESTAMP)";
 
         try {
             DataBase dataBase = new DataBase();
             Connection conn = dataBase.connect();
+            String userEmail = UserEmail.getText().trim();
 
+            // Check if the email ends with the specified domain
+            if (!userEmail.endsWith("@etu.uae.ac.ma")) {
+                errorEmail.setText("Invalid email format");
+                return; // Stop further execution if the email is invalid
+            } else {
+                errorEmail.setText(""); // Clear the error message if the email is valid
+            }
 
+            // Check other fields for non-empty values
             if (UserCne.getText() != null && !UserCne.getText().trim().isEmpty() &&
                     UserEmail.getText() != null && !UserEmail.getText().trim().isEmpty() &&
                     UserFirstName.getText() != null && !UserFirstName.getText().trim().isEmpty() &&
                     UserLastName.getText() != null && !UserLastName.getText().trim().isEmpty() &&
-                    UserName.getText() != null && !UserName.getText().trim().isEmpty()){
+                    UserName.getText() != null && !UserName.getText().trim().isEmpty()) {
 
-                        PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                        preparedStatement.setString(1, UserCne.getText());
-                        preparedStatement.setString(2, UserEmail.getText());
-                        preparedStatement.setString(3, UserFirstName.getText());
-                        preparedStatement.setString(4, UserLastName.getText());
-                        preparedStatement.setString(5, UserPassword.getText());
+                PreparedStatement preparedStatement = conn.prepareStatement(sql);
+                preparedStatement.setString(1, UserCne.getText());
+                preparedStatement.setString(2, UserEmail.getText());
+                preparedStatement.setString(3, UserFirstName.getText());
+                preparedStatement.setString(4, UserLastName.getText());
+                preparedStatement.setString(5, UserPassword.getText());
 
-                        String selectedRole = ((RadioButton) role.getSelectedToggle()).getText();
-                        preparedStatement.setString(6, selectedRole);
-                        preparedStatement.setString(7, UserName.getText());
-                        preparedStatement.setString(8, imagePath);
+                String selectedRole = ((RadioButton) role.getSelectedToggle()).getText();
+                preparedStatement.setString(6, selectedRole);
+                preparedStatement.setString(7, UserName.getText());
+                preparedStatement.setString(8, imagePath);
 
+                preparedStatement.executeUpdate();
 
-                        preparedStatement.executeUpdate();
+                dataBase.closeConnection();
+                successAlert(event);
+                goToAlluser(event);
 
-
-                        dataBase.closeConnection();
-               successAlert(event);
-                goToPageUser(event);
-
-
-            }else{
+            } else {
                 dangerAlert(event);
             }
         } catch (Exception exception) {
-            System.out.println("NO DATA FOUND");
+            System.out.println("Error: " + exception.getMessage());
         }
-
-
-
     }
+
+
     @FXML
     private void goToAlluser(ActionEvent event) {
         try {
-            Initialevent = event;
-//             Load the FXML file for the register scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("allusers.fxml"));
             Parent root = loader.load();
 
-            // Create a new scene
             Scene nextScene = new Scene(root);
 
-            // Get the Stage from the current Node (you can adjust this if needed)
-          //  Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Set the new scene on the stage
-            Stage currentStage =new Stage();
+            // Close the current stage
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
 
-            currentStage.setScene(nextScene);
-            currentStage.setFullScreen(true);
-
-            currentStage.show();
+            // Open the new stage
+            Stage newStage = new Stage();
+            newStage.setScene(nextScene);
+            newStage.setFullScreen(true);
+            newStage.show();
 
         } catch (IOException ex) {
-            System.out.println(ex.getMessage()); // Handle the exception appropriately
+            System.out.println(ex.getMessage());
         }
+
     }
     @FXML
     private void goToPageUser(ActionEvent event) {
@@ -174,7 +178,7 @@ public class UserCrudController implements Initializable {
                 // Create a new file in the destination directory
                Path destinationPath = Paths.get(System.getProperty("user.dir"), imageDirectory, uniqueFileName);
                 // Copy the selected file to the destination directory
-                Files.move(selectedFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(selectedFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
 
                 System.out.println("Image replaced successfully!");
             } catch (IOException e) {

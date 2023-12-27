@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1489.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookDetailsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1489.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="306.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
          <children>
@@ -31,7 +32,7 @@
                               <Image url="@imgs/icons8-home.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#8a8a8a">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToHome" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -40,12 +41,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/style.css">
                      <children>
-                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="18.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imgs/icons8-search1.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Searsh" textFill="#8a8a8a">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToAllBooks" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="Searsh" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -59,7 +60,7 @@
                               <Image url="@imgs/icons8-book-shelf-48.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" styleClass="transparent" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToMyshelf" prefHeight="35.0" prefWidth="90.0" styleClass="transparent" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -148,11 +149,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </ImageView>
-                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="106.0" text="Ali Linaboui" textFill="#4d4d4d">
-                                 <font>
-                                    <Font name="Arial" size="12.0" />
-                                 </font>
-                              </Label>
+                              <Button mnemonicParsing="false" onAction="#gotoProfile" prefHeight="25.0" prefWidth="95.0" styleClass="transparent" stylesheets="@css/style.css" text="Ali Linaboui" />
                            </children>
                            <HBox.margin>
                               <Insets />
@@ -200,7 +197,7 @@
                                     <String fx:value="raduis" />
                                  </styleClass>
                                  <children>
-                                    <ImageView fitHeight="172.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="BookImage" fitHeight="172.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@imgs/snow.jpeg" />
                                        </image>
@@ -245,6 +242,7 @@
                                           <Insets top="28.0" />
                                        </VBox.margin>
                                     </HBox>
+                                    <Label fx:id="Bookidpass" prefHeight="22.0" prefWidth="27.0" text="7" textFill="WHITE" />
                                  </children>
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -252,12 +250,12 @@
                               </VBox>
                               <VBox minWidth="-Infinity" prefHeight="342.0" prefWidth="416.0">
                                  <children>
-                                    <Label prefHeight="52.0" prefWidth="404.0" text="Don’t Make Me Think " textFill="#4d4d4d">
+                                    <Label fx:id="BookName" prefHeight="52.0" prefWidth="404.0" text="Don’t Make Me Think " textFill="#4d4d4d">
                                        <font>
                                           <Font name="Inter Bold" size="21.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="29.0" prefWidth="393.0" text="By Steve Krug, 2000" textFill="#4d4d4d">
+                                    <Label fx:id="BookAuthor1" prefHeight="29.0" prefWidth="393.0" text="By Steve Krug, 2000" textFill="#4d4d4d">
                                        <font>
                                           <Font name="Inter Regular" size="16.0" />
                                        </font>
@@ -269,7 +267,7 @@
                                                 <Image url="@imgs/img-removebg-preview.png" />
                                              </image>
                                           </ImageView>
-                                          <Label prefHeight="17.0" prefWidth="75.0" text="5.0 Ratings" textFill="#4d4d4d">
+                                          <Label fx:id="rating" prefHeight="17.0" prefWidth="75.0" text="5.0 Ratings" textFill="#4d4d4d">
                                              <font>
                                                 <Font name="Inter Regular" size="12.0" />
                                              </font>
@@ -339,7 +337,7 @@
                                                 </HBox>
                                              </children>
                                           </VBox>
-                                          <VBox prefHeight="100.0" prefWidth="123.0" spacing="5.0">
+                                          <VBox prefHeight="96.0" prefWidth="143.0" spacing="5.0">
                                              <children>
                                                 <Label prefHeight="26.0" prefWidth="110.0" text="Status" textFill="#4d4d4d">
                                                    <font>
@@ -362,7 +360,7 @@
                                                             <Image url="@imgs/location_icon.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label text=" CS A-15" />
+                                                      <Label fx:id="status" prefHeight="17.0" prefWidth="130.0" text=" in library" />
                                                    </children>
                                                 </HBox>
                                              </children>
@@ -431,12 +429,12 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <Label prefHeight="36.0" prefWidth="342.0" text="Steve Krug" textFill="#4d4d4d">
+                                    <Label fx:id="BookAuthor11" prefHeight="36.0" prefWidth="342.0" text="Steve Krug" textFill="#4d4d4d">
                                        <font>
                                           <Font name="Inter Regular" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="70.0" prefWidth="407.0" text="Steve Krug is a usability consultant who has more&#10;than 30 years of experience as a user  advocate &#10;for companies like Apple, &#10;&#10;&#10;&#10;" textFill="#4d4d4d">
+                                    <Label fx:id="description" prefHeight="70.0" prefWidth="407.0" text="Steve Krug is a usability consultant who has more&#10;than 30 years of experience as a user  advocate &#10;for companies like Apple, &#10;&#10;&#10;&#10;" textFill="#4d4d4d">
                                        <font>
                                           <Font name="Inter Regular" size="12.0" />
                                        </font>
@@ -511,25 +509,22 @@
                                                       <Image url="@imgs/icons8-folder-65.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label text="Buy Now" textFill="#4d4d4d">
+                                                <Label textFill="#4d4d4d">
                                                    <font>
                                                       <Font name="Inter Regular" size="15.0" />
                                                    </font>
                                                 </Label>
+                                                <Hyperlink fx:id="link" prefHeight="23.0" prefWidth="70.0" text="Buy Now" />
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="169.0" spacing="10.0">
+                                          <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="169.0" spacing="20.0">
                                              <children>
-                                                <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@imgs/icons8-amazon-96.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label text="Buy Now" textFill="#4d4d4d">
-                                                   <font>
-                                                      <Font name="Inter Regular" size="15.0" />
-                                                   </font>
-                                                </Label>
+                                                <Hyperlink fx:id="link2" prefHeight="23.0" prefWidth="81.0" text="Buy Now" />
                                              </children>
                                           </HBox>
                                           <Label prefHeight="53.0" prefWidth="169.0" text="When you buy books using &#10;these links the Internet Archive &#10;may earn a small commission.">
@@ -602,12 +597,12 @@
                                                 <Insets left="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="Publish Date" textFill="#666666">
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="213.0" text="category" textFill="#666666">
                                                    <font>
                                                       <Font name="Inter Regular" size="13.0" />
                                                    </font>
                                                 </Label>
-                                                <Label alignment="CENTER" prefHeight="13.0" prefWidth="217.0" text="200" textFill="#333333">
+                                                <Label fx:id="category" alignment="CENTER" prefHeight="13.0" prefWidth="217.0" text="200" textFill="#333333">
                                                    <font>
                                                       <Font name="Inter Bold" size="14.0" />
                                                    </font>
@@ -635,7 +630,7 @@
                                                       <Font name="Inter Regular" size="13.0" />
                                                    </font>
                                                 </Label>
-                                                <Label alignment="CENTER" prefHeight="24.0" prefWidth="222.0" text="English" textFill="#f27851">
+                                                <Label fx:id="Language" alignment="CENTER" prefHeight="24.0" prefWidth="222.0" text="English" textFill="#f27851">
                                                    <font>
                                                       <Font name="Inter Bold" size="14.0" />
                                                    </font>
@@ -649,7 +644,7 @@
                                                       <Font name="Inter Regular" size="13.0" />
                                                    </font>
                                                 </Label>
-                                                <Label alignment="CENTER" prefHeight="25.0" prefWidth="238.0" text="200" textFill="#333333">
+                                                <Label fx:id="pages" alignment="CENTER" prefHeight="25.0" prefWidth="238.0" text="200" textFill="#333333">
                                                    <font>
                                                       <Font name="Inter Bold" size="14.0" />
                                                    </font>

@@ -370,6 +370,7 @@
                            <children>
                               <VBox prefHeight="125.0" prefWidth="342.0">
                                  <children>
+                                    <Label fx:id="errorEmail" prefHeight="1.0" prefWidth="235.0" textFill="#ff1f0f" />
                                     <TextField fx:id="UserEmail" prefHeight="42.0" prefWidth="345.0" promptText="email" style="-fx-background-radius: 5;" stylesheets="@css/style.css" />
                                  </children>
                               </VBox>
@@ -377,6 +378,9 @@
                                  <children>
                                     <PasswordField fx:id="UserPassword" prefHeight="42.0" prefWidth="342.0" promptText="password" />
                                  </children>
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
                               </VBox>
                            </children>
                         </HBox>

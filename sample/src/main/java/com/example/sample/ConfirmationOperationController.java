@@ -3,9 +3,13 @@ package com.example.sample;
 import BD.DataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -34,8 +38,28 @@ public class ConfirmationOperationController {
         id = getId();
         UserCompenentController userCompenentController = new UserCompenentController();
         userCompenentController.removeUserFromDatabase(id);
-            userCompenentController.goToPageAllUser(event);
-        closeDialog(event);
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allusers.fxml"));
+
+
+            // Create a new scene
+            Parent root = loader.load();
+
+            Scene nextScene = new Scene(root);
+
+            // Get the Stage from the current Node (you can adjust this if needed)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Set the new scene on the stage
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+        //closeDialog(event);
     }
 
     @FXML
