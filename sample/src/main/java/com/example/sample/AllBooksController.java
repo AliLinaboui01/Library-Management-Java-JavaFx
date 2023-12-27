@@ -1,5 +1,6 @@
 package com.example.sample;
 
+import BD.DataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,10 @@ import model.Book;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,47 +48,13 @@ public class AllBooksController implements Initializable {
     private List<Book> allBooks(){
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
-        book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/rich.jpeg");
-        book.setAuthor("Robert T. Kiyosaki");
-        ls.add(book);
-
-        book = new Book();
-        book.setName("THW WARREN BUFFETT WAY");
-        book.setImageSrc("imgs/téléchargement.jpeg");
-        book.setAuthor("Robert G. Hagstrom");
-        ls.add(book);
+        DataBase dataBase=new DataBase();
+        Connection conn = dataBase.connect();
+        String select = "SELECT * FROM books";
 
 
 
 
-        book = new Book();
-        book.setName("THE RICHEST MAN IN BABYLON");
-        book.setImageSrc("imgs/RICHEST.jpeg");
-        book.setAuthor("George Samuel Clason");
-        ls.add(book);
-
-
-        book = new Book();
-        book.setName("THW WARREN BUFFETT WAY");
-        book.setImageSrc("imgs/téléchargement.jpeg");
-        book.setAuthor("Robert G. Hagstrom");
-        ls.add(book);
-
-
-
-        book = new Book();
-        book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/rich.jpeg");
-        book.setAuthor("Robert T. Kiyosaki");
-        ls.add(book);
-
-
-        book = new Book();
-        book.setName("THE RICHEST MAN IN BABYLON");
-        book.setImageSrc("imgs/RICHEST.jpeg");
-        book.setAuthor("George Samuel Clason");
-        ls.add(book);
         return ls;
     }
 

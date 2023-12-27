@@ -39,6 +39,8 @@ public class RegisterController {
 
     @FXML
     private Button registerButton;
+    @FXML
+    RegisterVerificationController registerVerificationController;
     private final SendMail sendMail = new SendMail("alilinaboui@gmail.com", "gpmo chhj lapm uzwf");
     public void register(ActionEvent e) {
         String mailUser = email.getText();
@@ -53,11 +55,18 @@ public class RegisterController {
             try {
                 sendMail.SendVerificationMail(mailUser, verificationCode);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("registerVerification.fxml"));
-//                loader.setController(new RegisterVerificationController(verificationCode));
                 Parent root = loader.load();
 
                 // Create a new scene
                 Scene nextScene = new Scene(root);
+
+                RegisterVerificationController registerVerificationController = loader.getController();
+                if (registerVerificationController != null) {
+                    registerVerificationController.setVerifyCode(verificationCode);
+                } else {
+                    System.out.println("Error: RegisterVerificationController is null");
+                    // Handle this situation appropriately
+                }
 
                 // Get the Stage from the current Node (you can adjust this if needed)
                 Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();

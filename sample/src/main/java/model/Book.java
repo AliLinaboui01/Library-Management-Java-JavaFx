@@ -1,6 +1,7 @@
 package model;
 
 public class Book {
+
     private int id;
 
     public int getId() {
@@ -11,14 +12,34 @@ public class Book {
         this.id = id;
     }
 
+
+
+
+    private int idBook;
+    private String description;
+
     private String name;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     private String imageSrc;
     private String author;
     private String possibility;
     private String previewButton;
     private Boolean isFavorite = false;
-
-    private String rating;
+    private String category;
+    private int pages;
+    private String language;
+    private String isbn;
+    private int quantity;
+    private int availableQuantity;
+    private float rating;
     public void setName(String name) {
         this.name = name;
     }
@@ -42,15 +63,6 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-
     public String getPossibility() {
         return possibility;
     }
@@ -73,5 +85,68 @@ public class Book {
 
     public void setFavorite(Boolean favorite) {
         isFavorite = favorite;
+    }
+    public int getIdBook() {
+        return idBook;
+    }
+
+    public void setIdBook(int idBook) {
+        this.idBook = idBook;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(int availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

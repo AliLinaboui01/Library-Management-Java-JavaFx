@@ -102,7 +102,7 @@
                               <Image url="@imgs/icons8-books-64.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToAllBook" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
@@ -388,30 +388,120 @@
                   <String fx:value="shadow" />
                </styleClass>
                <children>
-                  <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="77.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField fx:id="titleBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Title Book" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField fx:id="languageBookInput" prefHeight="42.0" prefWidth="325.0" promptText="language" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField fx:id="authorBookInput" layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Author Name" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <VBox alignment="CENTER" prefHeight="90.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorTitle" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="titleBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Title Book" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorLanguage" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="languageBookInput" prefHeight="42.0" prefWidth="325.0" promptText="language" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="46.0" layoutY="10.0" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorAuthor" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="authorBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Author Name" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField fx:id="categoryBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Category" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField fx:id="pagesBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Pages" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField fx:id="quantityBookInput" layoutX="309.0" layoutY="39.0" prefHeight="42.0" prefWidth="325.0" promptText="Quantity" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                        <VBox alignment="CENTER" prefHeight="90.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorCategory" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="categoryBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Category" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorPages" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="pagesBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Pages" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="46.0" layoutY="10.0" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorQuantity" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="quantityBookInput" prefHeight="42.0" prefWidth="325.0" promptText="Quantity" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="20.0" layoutY="304.0" prefHeight="90.0" prefWidth="923.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextField fx:id="isbnBookInput" prefHeight="42.0" prefWidth="325.0" promptText="ISBN" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <TextField prefHeight="42.0" prefWidth="325.0" promptText="ratting" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
-                        <Button fx:id="uploadImageButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="334.0" style="-fx-text-fill: #0561FC; -fx-background-color: #DFF0FF; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Upload Image Book" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorIsbn" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="isbnBookInput" prefHeight="42.0" prefWidth="325.0" promptText="ISBN" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorRatting" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="rattingBookInput" prefHeight="42.0" prefWidth="325.0" promptText="ratting" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorImage" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="uploadImageButton" mnemonicParsing="false" onAction="#uploadImage" prefHeight="42.0" prefWidth="274.0" style="-fx-text-fill: #0561FC; -fx-background-color: #DFF0FF; -fx-background-radius: 15; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Upload Image Book" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="20.0" layoutY="348.0" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="348.0" prefHeight="114.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">
                      <children>
-                        <TextArea fx:id="descriptionBookInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="326.0" promptText="Description" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" stylesheets="@css/style.css" />
+                        <VBox prefHeight="200.0" prefWidth="325.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="errorDescription" alignment="CENTER" prefHeight="18.0" prefWidth="325.0" textFill="#e10d0d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="descriptionBookInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="326.0" promptText="Description" style="-fx-border-color: #0561FC; -fx-border-radius: 10;" styleClass="transparent" stylesheets="@css/style.css" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="90.0" prefWidth="923.0" spacing="100.0" styleClass="transparent" stylesheets="@css/style.css">

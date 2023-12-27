@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.VerifyController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="913.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -33,7 +33,7 @@
             </HBox>
             <AnchorPane prefHeight="497.0" prefWidth="400.0">
                <children>
-                  <Button fx:id="loginButton" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="286.0" style="-fx-background-color: #FA7C54; -fx-background-radius: 20; -fx-cursor: hand;" stylesheets="@css/style.css" text="Login" textFill="WHITE">
+                  <Button fx:id="loginButton" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="286.0" style="-fx-background-color: #FA7C54; -fx-background-radius: 20; -fx-cursor: hand;" stylesheets="@css/style.css" text="Login" textFill="WHITE">
                      <font>
                         <Font name="Berlin Sans FB" size="14.0" />
                      </font>

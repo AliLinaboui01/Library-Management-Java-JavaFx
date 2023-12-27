@@ -60,23 +60,7 @@ public class BooksBorrowdController implements Initializable {
     private List<Book> getBorrowedBooks() {
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
-        book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/rich.jpeg");
-        book.setAuthor("Robert T. Kiyosaki");
-        book.setRating("4/5");
-        ls.add(book);
 
-        book = new Book();
-        book.setName("THW WARREN BUFFETT");
-        book.setImageSrc("imgs/téléchargement.jpeg");
-        book.setAuthor("Robert G. Hagstrom");
-        book.setRating("3/5");
-        ls.add(book);
-
-        book = new Book();
-        book.setName("THW WARREN BUFFETT");
-        book.setImageSrc("imgs/téléchargement.jpeg");
-        book.setAuthor("Robert G. Hagstrom");
         ls.add(book);
 
 
@@ -96,6 +80,7 @@ public class BooksBorrowdController implements Initializable {
         book.setImageSrc("imgs/rich.jpeg");
         book.setAuthor("Robert T. Kiyosaki");
         ls.add(book);
+
 
         return ls;
     }
