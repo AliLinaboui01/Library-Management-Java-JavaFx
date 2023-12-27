@@ -102,7 +102,7 @@
                               <Image url="@imgs/icons8-books-64.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goAllBooks" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
@@ -342,7 +342,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" stylesheets="@css/style.css" text="Ali Linaboui">
+                  <Button mnemonicParsing="false" onAction="#goToProfile" prefHeight="26.0" prefWidth="82.0" stylesheets="@css/style.css" text="Ali Linaboui">
                      <styleClass>
                         <String fx:value="transparent" />
                         <String fx:value="white-background" />

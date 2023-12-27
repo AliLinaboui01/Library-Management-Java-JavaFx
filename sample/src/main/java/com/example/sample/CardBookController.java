@@ -46,7 +46,6 @@ public class CardBookController {
         imageBook.setImage(image);
         titleBook.setText(book.getName());
         authorName.setText(book.getAuthor());
-
     }
     public void getBookDetails(ActionEvent e){
         try {

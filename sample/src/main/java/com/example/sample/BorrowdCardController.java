@@ -26,7 +26,7 @@ public class BorrowdCardController {
         BookImg.setImage(image);
         BookTitle.setText(book.getName());
         BookAuthor.setText(book.getAuthor());
-        BookRating.setText(book.getRating());
+//        BookRating.setText(book.getRating());
     }
 
 }
