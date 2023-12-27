@@ -163,7 +163,7 @@ public class ReservationController  implements Initializable {
     public void gotoMyShelfs(ActionEvent e) {
         try {
 //             Load the FXML file for the register scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("bookborrowd.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Parent root = loader.load();
 
             // Create a new scene
