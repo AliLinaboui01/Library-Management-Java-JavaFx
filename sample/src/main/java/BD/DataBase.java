@@ -6,21 +6,21 @@ public class DataBase {
 
 
     public DataBase(){}
-    private static final String URL = "jdbc:mysql://localhost:3306/library";
+    private static final String URL = "jdbc:mysql://localhost:3306/javaproject";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
 
 
-    public void connect(){
-
+    public Connection connect(){
+        Connection conn =null;
         try {
-            Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("good job success connection ");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        return conn;
     }
 
     public void closeConnection() {

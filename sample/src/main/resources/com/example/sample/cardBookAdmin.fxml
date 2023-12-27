@@ -55,8 +55,8 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="110.0" prefWidth="454.0" spacing="21.0">
          <children>
-            <Button fx:id="editButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #DFF0FF; -fx-text-fill: #0561FC; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Edit" />
-            <Button fx:id="removeButton" layoutX="150.0" layoutY="65.0" mnemonicParsing="false" style="-fx-background-color: #FFF4DF; -fx-text-fill: #FAA86D; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Remove" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#updateBook" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #DFF0FF; -fx-text-fill: #0561FC; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Update" />
+            <Button fx:id="removeButton" layoutX="150.0" layoutY="65.0" mnemonicParsing="false" onAction="#removeBook" style="-fx-background-color: #FFF4DF; -fx-text-fill: #FAA86D; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Remove" />
          </children>
       </HBox>
    </children>
