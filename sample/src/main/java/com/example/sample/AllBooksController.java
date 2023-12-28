@@ -48,10 +48,26 @@ public class AllBooksController implements Initializable {
     private List<Book> allBooks(){
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
-        DataBase dataBase=new DataBase();
-        Connection conn = dataBase.connect();
-        String select = "SELECT * FROM books";
 
+
+
+
+        book = new Book();
+        book.setName("RICH DAD POOR DAD");
+        book.setImageSrc("imgs/téléchargement (1).png");
+        book.setAuthor("Robert T. Kiyosaki");
+        ls.add(book);
+
+        book = new Book();
+        book.setName("THW WARREN BUFFETT");
+        book.setImageSrc("imgs/téléchargement (1).png");
+        book.setAuthor("Robert G. Hagstrom");
+        ls.add(book);
+        book = new Book();
+        book.setName("RICH DAD POOR DAD");
+        book.setImageSrc("imgs/téléchargement (1).png");
+        book.setAuthor("Robert T. Kiyosaki");
+        ls.add(book);
 
 
 

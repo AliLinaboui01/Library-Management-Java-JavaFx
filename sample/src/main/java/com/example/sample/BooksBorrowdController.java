@@ -61,26 +61,37 @@ public class BooksBorrowdController implements Initializable {
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
 
-        ls.add(book);
 
 
         book = new Book();
         book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/rich.jpeg");
+        book.setImageSrc("imgs/RICHEST.jpeg");
         book.setAuthor("Robert T. Kiyosaki");
         ls.add(book);
 
         book = new Book();
         book.setName("THW WARREN BUFFETT");
-        book.setImageSrc("imgs/téléchargement.jpeg");
+        book.setImageSrc("imgs/RICHEST.jpeg");
         book.setAuthor("Robert G. Hagstrom");
         ls.add(book);
         book = new Book();
         book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/rich.jpeg");
+        book.setImageSrc("imgs/RICHEST.jpeg");
         book.setAuthor("Robert T. Kiyosaki");
         ls.add(book);
 
+        book = new Book();
+        book.setName("RICH DAD POOR DAD");
+        book.setImageSrc("imgs/RICHEST.jpeg");
+        book.setAuthor("Robert T. Kiyosaki");
+        ls.add(book);
+
+
+        book = new Book();
+        book.setName("RICH DAD POOR DAD");
+        book.setImageSrc("imgs/RICHEST.jpeg");
+        book.setAuthor("Robert T. Kiyosaki");
+        ls.add(book);
 
         return ls;
     }

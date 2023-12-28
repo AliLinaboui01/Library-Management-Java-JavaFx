@@ -47,10 +47,14 @@ public class ReservationController  implements Initializable {
 
         System.out.println("from borrow confirmation "+QrPath);
         System.out.println(this.idBook +" user "+ this.idUser);
+       String description = null;
 
-
-        String sql = "INSERT INTO reservations ( bookID, qrCode, reservationDate, returnDate, userID) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO reservations ( bookID, qrCode, reservationDate, returnDate, userID,purpos) VALUES (?, ?, ?, ?, ?,?)";
         String updateQuantitySql = "UPDATE books SET availableQuantity = availableQuantity - 1 WHERE bookID = ?";
+
+        description = purpose.getText();
+          if(description == null)
+            description = "Recherche";
 
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.connect();
@@ -64,6 +68,7 @@ public class ReservationController  implements Initializable {
             LocalDateTime returnDate = currentDate.plus(15, ChronoUnit.DAYS);
             preparedStatement.setTimestamp(4, Timestamp.valueOf(returnDate));
             preparedStatement.setInt(5, this.idUser);
+            preparedStatement.setString(6,description);
             preparedStatement.executeUpdate();
             updateQuantityStatement.setInt(1,this.idBook);
             updateQuantityStatement.executeUpdate();
@@ -90,13 +95,12 @@ public class ReservationController  implements Initializable {
 
             // Get the Stage from the current Node
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
+               currentStage.close();
             // Set the owner of the dialog to the current stage
             dialog.initOwner(currentStage);
             // Show the dialog
             dialog.showAndWait();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.close();
+
             gotoMyShelfs(event);
 
 
@@ -163,7 +167,7 @@ public class ReservationController  implements Initializable {
     public void gotoMyShelfs(ActionEvent e) {
         try {
 //             Load the FXML file for the register scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("bookborrowd.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Parent root = loader.load();
 
             // Create a new scene
