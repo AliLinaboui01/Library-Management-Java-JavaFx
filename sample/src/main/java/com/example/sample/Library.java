@@ -19,7 +19,7 @@ public class Library extends Application {
 //<<<<<<< contribution
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("ConfirmContributionAdmin.fxml"));
 
        
 

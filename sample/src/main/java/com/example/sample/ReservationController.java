@@ -134,9 +134,9 @@ public class ReservationController  implements Initializable {
         System.out.println("idUser: " + idUser);
         String pathQrCode = GenerateQRCode.generateQrCode("User "+idUser+"reserver book " + idBook );
         this.QrPath = pathQrCode;
-        sendMail.SendVerificationMail("akkaouih17@gmail.com", "verificationCode");//send email
+       // sendMail.SendVerificationMail("akkaouih17@gmail.com", "verificationCode");//send email
 
-        sendMail.sendEmailWithAttachment("akkaouih17@gmail.com", "Your RESERVATION Qr CODE ","ENSAH HOCEIMA", this.QrPath);
+        //sendMail.sendEmailWithAttachment("akkaouih17@gmail.com", "Your RESERVATION Qr CODE ","ENSAH HOCEIMA", this.QrPath);
 
 
 
