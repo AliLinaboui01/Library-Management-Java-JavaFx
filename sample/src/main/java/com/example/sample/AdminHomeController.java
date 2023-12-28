@@ -1,5 +1,6 @@
 package com.example.sample;
 
+import Session.SessionManager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,9 +22,18 @@ import java.util.ResourceBundle;
 public class AdminHomeController implements Initializable {
     @FXML
     private LineChart<String, Number> lineChart;
-
+    @FXML
+    private Button userName;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        String currentUser = SessionManager.getCurrentUser();
+        if (currentUser != null) {
+            userName.setText(currentUser);
+        } else {
+            // Handle the case where the current user is not set
+            userName.setText("faild");
+        }
         XYChart.Series<String, Number> series = new XYChart.Series<>();
 //        series.setName("Sample Data");
 
@@ -73,5 +84,47 @@ public class AdminHomeController implements Initializable {
         ex.printStackTrace(); // Handle the exception appropriately
     }
 
+    }
+    public void goToBooks(ActionEvent event){
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allBooksAdmin.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene
+            Scene nextScene = new Scene(root);
+
+            // Get the Stage from the current Node (you can adjust this if needed)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Set the new scene on the stage
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToHome(ActionEvent event){
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene
+            Scene nextScene = new Scene(root);
+
+            // Get the Stage from the current Node (you can adjust this if needed)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Set the new scene on the stage
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
     }
 }

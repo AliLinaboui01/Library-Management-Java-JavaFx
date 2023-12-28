@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import javafx.application.Preloader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +36,7 @@ public class LoginController {
         Connection connect = dataBase.connect();
 
         // Use a PreparedStatement to avoid SQL injection
-        String sql = "SELECT * FROM user WHERE email=? AND password=?";
+        String sql = "SELECT * FROM users WHERE email=? AND password=?";
 
         try (PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
             preparedStatement.setString(1, name);
@@ -44,25 +45,50 @@ public class LoginController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
+                String loggedInUser = resultSet.getString("username");
+                String role = resultSet.getString("userType");
+                SessionManager.setCurrentUser(loggedInUser);
                 // Successful login logic goes here
                 // Load the next FXML file
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
-                    Parent root = loader.load();
+                if(role.equals("admin")){
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
+                        Parent root = loader.load();
 
-                    // Create a new scene
-                    Scene nextScene = new Scene(root);
+                        // Create a new scene
+                        Scene nextScene = new Scene(root);
 
-                    // Get the Stage from the current Node (you can adjust this if needed)
-                    Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        // Get the Stage from the current Node (you can adjust this if needed)
+                        Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 
-                    // Set the new scene on the stage
-                    currentStage.setScene(nextScene);
-                    currentStage.setFullScreen(true);
+                        // Set the new scene on the stage
+                        currentStage.setScene(nextScene);
+                        currentStage.setFullScreen(true);
 
-                } catch (IOException ex) {
-                    ex.printStackTrace(); // Handle the exception appropriately
+                    } catch (IOException ex) {
+                        ex.printStackTrace(); // Handle the exception appropriately
+                    }
+
+                }else if(role.equals("student")){
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+                        Parent root = loader.load();
+
+                        // Create a new scene
+                        Scene nextScene = new Scene(root);
+
+                        // Get the Stage from the current Node (you can adjust this if needed)
+                        Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+                        // Set the new scene on the stage
+                        currentStage.setScene(nextScene);
+                        currentStage.setFullScreen(true);
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace(); // Handle the exception appropriately
+                    }
                 }
+
             } else {
                 // Unsuccessful login logic goes here
                 Alert alert = new Alert(Alert.AlertType.ERROR);

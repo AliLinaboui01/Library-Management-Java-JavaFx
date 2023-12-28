@@ -1,12 +1,17 @@
 package com.example.sample;
 
+
+import Session.SessionManager;
+
 import BD.DataBase;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
@@ -31,6 +36,8 @@ public class HomeController implements Initializable {
     @FXML
     private HBox recomondebooks;
     @FXML
+    private Button username;
+    @FXML
     private HBox recomondebooks2;
     @FXML
     private HBox acadimicbook;
@@ -41,7 +48,18 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recomdedforyou = new ArrayList<>(recomdedforyou());
+
+        acadimicbooks = new ArrayList<>(recomdedforyou());
+        String currentUser = SessionManager.getCurrentUser();
+        if (currentUser != null) {
+            username.setText(currentUser);
+        } else {
+            // Handle the case where the current user is not set
+            username.setText("faild");
+        }
+
         acadimicbooks = new ArrayList<>(getAcadimicbooks());
+
         for (Book book : recentlyAdded) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("bookcompnent.fxml"));
@@ -86,6 +104,7 @@ public class HomeController implements Initializable {
 
         }
     }
+
 
 
     private List<Book> recentlyAdded() {

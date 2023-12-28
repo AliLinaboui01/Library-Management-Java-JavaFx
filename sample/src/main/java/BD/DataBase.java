@@ -19,8 +19,6 @@ public class DataBase {
         Connection conn = null;
         try {
              conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-
-            System.out.println("good job success connection ");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

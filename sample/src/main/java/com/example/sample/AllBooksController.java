@@ -52,6 +52,7 @@ public class AllBooksController implements Initializable {
 
 
 
+
         book = new Book();
         book.setName("RICH DAD POOR DAD");
         book.setImageSrc("imgs/téléchargement (1).png");
@@ -68,6 +69,7 @@ public class AllBooksController implements Initializable {
         book.setImageSrc("imgs/téléchargement (1).png");
         book.setAuthor("Robert T. Kiyosaki");
         ls.add(book);
+
 
 
 
