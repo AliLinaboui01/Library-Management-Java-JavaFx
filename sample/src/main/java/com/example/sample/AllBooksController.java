@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,9 +28,13 @@ import java.util.ResourceBundle;
 public class AllBooksController implements Initializable {
     @FXML
     private VBox allBoxVbox;
+    @FXML
+    private Button username;
     private List<Book> allBooks;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String currentUser = SessionManager.getCurrentUser();
+        username.setText(currentUser);
         allBooks = new ArrayList<>(allBooks());
         for (Book book : allBooks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -48,31 +54,31 @@ public class AllBooksController implements Initializable {
     private List<Book> allBooks(){
         List<Book> ls = new ArrayList<>();
         Book book = new Book();
-
-
-
-
-
-        book = new Book();
-        book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/téléchargement (1).png");
-        book.setAuthor("Robert T. Kiyosaki");
-        ls.add(book);
-
-        book = new Book();
-        book.setName("THW WARREN BUFFETT");
-        book.setImageSrc("imgs/téléchargement (1).png");
-        book.setAuthor("Robert G. Hagstrom");
-        ls.add(book);
-        book = new Book();
-        book.setName("RICH DAD POOR DAD");
-        book.setImageSrc("imgs/téléchargement (1).png");
-        book.setAuthor("Robert T. Kiyosaki");
-        ls.add(book);
-
-
-
-
+        DataBase dataBase=new DataBase();
+        Connection conn = dataBase.connect();
+        String select = "SELECT * FROM books";
+        try{
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(select);
+            while(resultSet.next()){
+                book.setAuthor(resultSet.getString("author"));
+                book.setAvailableQuantity(resultSet.getInt("availableQuantity"));
+                book.setIdBook(resultSet.getInt("bookID"));
+                book.setCategory(resultSet.getString("category"));
+                book.setDescription(resultSet.getString("description"));
+                book.setImageSrc(resultSet.getString("image"));
+                book.setIsbn(resultSet.getString("isbn"));
+                book.setLanguage(resultSet.getString("language"));
+                book.setPages(resultSet.getInt("pages"));
+                book.setQuantity(resultSet.getInt("quantity"));
+                book.setRating(resultSet.getFloat("rating"));
+                book.setName(resultSet.getString("title"));
+                ls.add(book);
+            }
+            dataBase.closeConnection();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         return ls;
     }
 
@@ -81,17 +87,10 @@ public class AllBooksController implements Initializable {
 
     public void goToHome(ActionEvent e) {
         try {
-//             Load the FXML file for the register scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Parent root = loader.load();
-
-            // Create a new scene
             Scene nextScene = new Scene(root);
-
-            // Get the Stage from the current Node (you can adjust this if needed)
             Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-
-            // Set the new scene on the stage
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
 

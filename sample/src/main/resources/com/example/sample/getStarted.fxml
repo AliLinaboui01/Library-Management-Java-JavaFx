@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="772.0" prefWidth="1150.0" styleClass="white-background" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.GetStartedController">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/bg.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" layoutX="174.0" layoutY="14.0" prefHeight="62.0" prefWidth="802.0" spacing="20.0" styleClass="white-background" stylesheets="@css/style.css">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-radius: 10; -fx-text-fill: #8a8a8a; -fx-region-background: #4d4d4d;" styleClass="mouse-moved-admin" stylesheets="@css/style.css" text="Home">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="369.0" layoutY="22.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-radius: 10; -fx-text-fill: #8a8a8a; -fx-region-background: #4d4d4d;" styleClass="mouse-moved-admin" stylesheets="@css/style.css" text="About">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="412.0" layoutY="22.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-radius: 10; -fx-text-fill: #8a8a8a; -fx-region-background: #4d4d4d;" styleClass="mouse-moved-admin" stylesheets="@css/style.css" text="Contact">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="453.0" layoutY="22.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-radius: 10; -fx-text-fill: #8a8a8a; -fx-region-background: #4d4d4d;" styleClass="mouse-moved-admin" stylesheets="@css/style.css" text="Service">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="mainpage" layoutX="276.0" layoutY="126.0" prefHeight="519.0" prefWidth="597.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="193.0" style="-fx-text-fill: #F27851;" text="WELCOME TO" translateX="243.0" translateY="30.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="36.0" prefWidth="180.0" text=" LibraryCom" translateX="249.0" translateY="25.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label style="-fx-text-fill: #F27851;" text="E-H" translateX="328.0" translateY="24.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#getStarted" prefHeight="9.0" prefWidth="268.0" style="-fx-background-radius: 16; -fx-text-fill: #ffffff; -fx-background-color: #F27851; -fx-cursor: hand; -fx-border-radius: 15;" styleClass="getStarted" stylesheets="@css/style.css" text="Get Started" translateX="196.0" translateY="293.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
