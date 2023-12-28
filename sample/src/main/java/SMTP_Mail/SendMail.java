@@ -1,8 +1,7 @@
 package SMTP_Mail;
 
 import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import javax.mail.internet.*;
 import java.util.Properties;
 
 public class SendMail {
@@ -313,5 +312,62 @@ public class SendMail {
             e.printStackTrace();
         }
 
+    }
+
+
+
+
+
+
+    public  void sendEmailWithAttachment(String to, String subject, String body, String attachmentPath) {
+        Properties properties = System.getProperties();
+        properties.put("mail.smtp.auth", "true");
+//        properties.put("mail.debug", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(userName, password);
+            }
+        });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(this.userName));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject(subject);
+
+            // Create the message body
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText(body);
+
+            // Create the attachment
+            MimeBodyPart attachmentPart = new MimeBodyPart();
+            attachmentPart.attachFile(attachmentPath);
+            attachmentPart.setFileName(MimeUtility.encodeText("image.jpg")); // Encode the filename
+
+            // Combine the message body and attachment
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+            multipart.addBodyPart(attachmentPart);
+
+            // Set the content of the message
+            message.setContent(multipart);
+
+            // Send the message
+            Transport transport = session.getTransport("smtp");
+            transport.connect("smtp.gmail.com", this.userName, this.password);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+
+            System.out.println("Email sent successfully with attachment.");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

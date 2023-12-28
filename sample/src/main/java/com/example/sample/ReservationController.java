@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import SMTP_Mail.SendMail;
 import com.example.sample.Services.GenerateQRCode;
 import com.google.zxing.WriterException;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -39,6 +41,7 @@ public class ReservationController  implements Initializable {
 
     @FXML
     private TextArea purpose;
+    private final SendMail sendMail = new SendMail("alilinaboui@gmail.com", "gpmo chhj lapm uzwf");
 
 
 
@@ -121,7 +124,7 @@ public class ReservationController  implements Initializable {
 
     }
 
-    public void setIds(int idBook, int idUser) throws IOException, WriterException {
+    public void setIds(int idBook, int idUser) throws IOException, WriterException, MessagingException {
         this.idBook = idBook;
         this.idUser = idUser;
         String isbnDatabase = this.getISBNById(idBook);
@@ -131,6 +134,11 @@ public class ReservationController  implements Initializable {
         System.out.println("idUser: " + idUser);
         String pathQrCode = GenerateQRCode.generateQrCode("User "+idUser+"reserver book " + idBook );
         this.QrPath = pathQrCode;
+        sendMail.SendVerificationMail("akkaouih17@gmail.com", "verificationCode");//send email
+
+        sendMail.sendEmailWithAttachment("akkaouih17@gmail.com", "Your RESERVATION Qr CODE ","ENSAH HOCEIMA", this.QrPath);
+
+
 
 
 
