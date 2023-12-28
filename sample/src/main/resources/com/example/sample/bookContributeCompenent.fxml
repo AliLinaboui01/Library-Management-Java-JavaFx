@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="1062.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BooksContributeCardController">
+    <styleClass>
+        <String fx:value="raduis" />
+        <String fx:value="white-background" />
+        <String fx:value="shadow" />
+    </styleClass>
+    <children>
+        <HBox alignment="CENTER" prefHeight="126.0" prefWidth="241.0" spacing="7.0">
+            <children>
+                <ImageView fx:id="bookImage" fitHeight="98.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/téléchargement.jpeg" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER" prefHeight="135.0" prefWidth="137.0">
+                    <children>
+                        <Label fx:id="bookTitle" prefHeight="26.0" prefWidth="142.0" text="Warren Buffett Way">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="authorName" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="142.0" style="-fx-text-fill: #A6A9AA;" text="Robert G. Hagstrom" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="135.0" prefWidth="114.0">
+            <children>
+                <Label fx:id="bookQuantity" text="1">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="252.0" layoutY="10.0" prefHeight="135.0" prefWidth="254.0">
+            <children>
+                <Label fx:id="bookCategory" style="-fx-text-fill: #A7AEB1;" text="finance and investment literature">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="110.0" prefWidth="454.0" spacing="21.0">
+            <children>
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#confirmContribution" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #DFF0FF; -fx-text-fill: #0561FC; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Confirm" />
+                <Button fx:id="removeButton" layoutX="150.0" layoutY="65.0" mnemonicParsing="false" onAction="#removeBook" style="-fx-background-color: #FFF4DF; -fx-text-fill: #FAA86D; -fx-background-radius: 5; -fx-cursor: hand;" styleClass="transparent" stylesheets="@css/style.css" text="Remove" />
+            </children>
+        </HBox>
+    </children>
+</HBox>
