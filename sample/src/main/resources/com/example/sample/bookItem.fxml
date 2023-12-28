@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#goTobookDetails" prefHeight="210.0" prefWidth="160.0" styleClass="white-backgroundB" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookItemController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="160.0" styleClass="white-backgroundB" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BookItemController">
    <children>
       <Button mnemonicParsing="false" onAction="#goTobookDetails" prefHeight="20.0" prefWidth="39.0" styleClass="transparent" stylesheets="@css/style.css">
          <graphic>
@@ -68,5 +68,6 @@
             </Label>
          </children>
       </HBox>
+      <Label />
    </children>
 </VBox>
