@@ -192,8 +192,6 @@ public class AddNewBookAdminController {
         }catch (Exception exception){
             exception.printStackTrace();
         }
-
-
     }
     public boolean handleSubmit(String titleBook,String descriptionBook,String categoryBook,String isbnBook,String pagesBook,String quantityBook,String languageBook,String authorBook , String rattingBook){
         return  !titleBook.trim().isEmpty() && !descriptionBook.trim().isEmpty() && !categoryBook.trim().isEmpty() && !isbnBook.trim().isEmpty() && !pagesBook.trim().isEmpty() && !quantityBook.trim().isEmpty()  && !languageBook.trim().isEmpty() && !authorBook.trim().isEmpty() && !rattingBook.trim().isEmpty();

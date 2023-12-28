@@ -52,9 +52,6 @@ public class AllBooksController implements Initializable {
         Connection conn = dataBase.connect();
         String select = "SELECT * FROM books";
 
-
-
-
         return ls;
     }
 
