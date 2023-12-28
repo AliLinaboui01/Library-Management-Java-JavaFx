@@ -27,7 +27,7 @@ public class Library extends Application {
       // stage.setResizable(false);
         stage.setTitle("LibraryCom");
         stage.setScene(scene);
-//        stage.setFullScreen(true);
+      stage.setFullScreen(true);
       //  DataBase dataBase = new DataBase();
        // dataBase.connect();
         stage.show();
