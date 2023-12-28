@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Book;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -112,6 +113,8 @@ public class BookDetailsController implements Initializable {
         } catch (IOException ex) {
             ex.printStackTrace(); // Handle the exception appropriately
         } catch (WriterException e) {
+            throw new RuntimeException(e);
+        } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
     }

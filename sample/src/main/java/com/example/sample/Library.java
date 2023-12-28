@@ -16,12 +16,28 @@ public class Library extends Application {
     @Override
 
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
+//<<<<<<< contribution
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("home.fxml"));
+
+       
+
+
+
+
+
+
+        Scene scene = new Scene(fxmlLoader.load(), 900, 700);
+/*
         FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("getStarted.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1150, 772);
+
+*/
       // stage.setResizable(false);
         stage.setTitle("LibraryCom");
         stage.setScene(scene);
-//      stage.setFullScreen(true);
+  // stage.setFullScreen(true);
       //  DataBase dataBase = new DataBase();
        // dataBase.connect();
         stage.show();
