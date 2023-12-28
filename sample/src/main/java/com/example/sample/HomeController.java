@@ -271,4 +271,5 @@ public class HomeController implements Initializable {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
+
 }

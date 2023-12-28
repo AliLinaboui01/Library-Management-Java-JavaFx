@@ -156,3 +156,14 @@
 .bar{
     -fx-background-color: #F7F9FA;
 }
+.getStarted{
+    -fx-effect: dropShadow(three-pass-box, rgba(255, 99, 71, 0.1), 10, 0, 0, 10);
+}
+#mainpage{
+
+        -fx-background-image: url("../imgs/get.jpg");
+        -fx-background-size: cover; /* Adjust as needed */
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center center;
+
+}
