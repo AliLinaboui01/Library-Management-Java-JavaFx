@@ -47,7 +47,9 @@ public class LoginController {
             if (resultSet.next()) {
                 String loggedInUser = resultSet.getString("username");
                 String role = resultSet.getString("userType");
+                int idUser=resultSet.getInt("userID");
                 SessionManager.setCurrentUser(loggedInUser);
+                SessionManager.setCurrentUserId(idUser);
                 // Successful login logic goes here
                 // Load the next FXML file
                 if(role.equals("admin")){

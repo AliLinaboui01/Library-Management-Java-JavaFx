@@ -33,7 +33,7 @@
                                 </ImageView>
                         <Button mnemonicParsing="false" onAction="#goToHome" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Button>
                             </children>
@@ -47,7 +47,7 @@
                                 </ImageView>
                         <Button mnemonicParsing="false" onAction="#goToAllBooks" styleClass="transparent" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Button>
                             </children>
@@ -61,7 +61,7 @@
                                 </ImageView>
                         <Button mnemonicParsing="false" onAction="#goToMyshelf" prefHeight="39.0" prefWidth="101.0" styleClass="transparent" stylesheets="@css/style.css" text=" My Shelf" textFill="#8a8a8a">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Button>
                             </children>
@@ -71,21 +71,9 @@
                 <Pane prefHeight="342.0" prefWidth="306.0" VBox.vgrow="ALWAYS" />
                 <VBox alignment="TOP_CENTER" prefHeight="119.0" prefWidth="221.0" spacing="12.0">
                     <children>
-                        <Label prefHeight="22.0" prefWidth="134.0" text="About" textFill="#8a8a8a">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="134.0" text="Logout" textFill="#8a8a8a">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="134.0" text="Terms &amp; Condition" textFill="#8a8a8a">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
+                        <Label prefHeight="22.0" prefWidth="134.0" text="About" textFill="#8a8a8a" />
+                        <Label prefHeight="22.0" prefWidth="134.0" text="Logout" textFill="#8a8a8a" />
+                        <Label prefHeight="22.0" prefWidth="134.0" text="Terms &amp; Condition" textFill="#8a8a8a" />
                     </children>
                <VBox.margin>
                   <Insets bottom="20.0" />
@@ -143,31 +131,27 @@
                                         </Label>
                                     </children>
                                 </HBox>
-                                <HBox prefHeight="52.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
-                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="12.0" styleClass="round-layout" stylesheets="@css/style.css">
-                                    <children>
-                                        <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@imgs/4645949.png" />
-                                            </image>
-                                            <HBox.margin>
-                                                <Insets />
-                                            </HBox.margin>
-                                        </ImageView>
-                                        <Label prefHeight="16.0" prefWidth="81.0" text="Ali Linaboui">
-                                            <font>
-                                                <Font name="Arial" size="13.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                    <HBox.margin>
-                                        <Insets right="12.0" />
-                                    </HBox.margin>
-                                    <padding>
-                                        <Insets left="5.0" />
-                                    </padding>
-                                </HBox>
+                                <HBox prefHeight="52.0" prefWidth="99.0" HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="2.0" styleClass="round-layout" stylesheets="@css/style.css">
+                           <children>
+                              <ImageView fitHeight="28.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/roundProfile.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="username" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" styleClass="transparent" stylesheets="@css/style.css" text="Hamza " />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
                             </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
                         </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="1008.0">
                      <children>
