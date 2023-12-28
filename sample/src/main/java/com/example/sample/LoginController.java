@@ -13,10 +13,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class LoginController {
     @FXML
@@ -125,4 +122,5 @@ public class LoginController {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
+
 }
