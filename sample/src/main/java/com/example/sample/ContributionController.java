@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -91,7 +92,7 @@ public class ContributionController implements Initializable {
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.connect();
         List<Book> books = new ArrayList<>();
-        String query="SELECT * FROM contributbook WHERE userID = 1 ORDER BY id DESC  ";
+        String query="SELECT * FROM contributbook WHERE userID =" +SessionManager.getCurrentUserId() ;
 
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
@@ -136,7 +137,7 @@ public class ContributionController implements Initializable {
                     statement.setString(2, bookCategory);
                     statement.setString(3, language);
                     statement.setString(4, book);
-                    statement.setInt(5, 1);
+                    statement.setInt(5, SessionManager.getCurrentUserId());
                     statement.setString(6,imagePath);
 
                     // Execute the insert statement

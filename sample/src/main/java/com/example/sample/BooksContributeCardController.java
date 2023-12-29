@@ -80,8 +80,8 @@ public class BooksContributeCardController {
         System.out.println(book.getName());
         addBookinBookslibrary(book);
         deleteBookById(this.bookID);
-        AdminHomeController adminHomeController= new AdminHomeController();
-        adminHomeController.goToBooks(event);
+        HomeController homeController= new HomeController();
+        homeController.goToContribute(event);
     }
 
 
