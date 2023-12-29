@@ -53,14 +53,16 @@ public class AllBooksController implements Initializable {
     }
     private List<Book> allBooks(){
         List<Book> ls = new ArrayList<>();
-        Book book = new Book();
+
         DataBase dataBase=new DataBase();
         Connection conn = dataBase.connect();
         String select = "SELECT * FROM books";
         try{
+
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(select);
             while(resultSet.next()){
+                Book book = new Book();
                 book.setAuthor(resultSet.getString("author"));
                 book.setAvailableQuantity(resultSet.getInt("availableQuantity"));
                 book.setIdBook(resultSet.getInt("bookID"));

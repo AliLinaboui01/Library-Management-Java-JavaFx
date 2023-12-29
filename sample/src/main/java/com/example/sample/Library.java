@@ -16,10 +16,12 @@ public class Library extends Application {
     @Override
 
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
-//<<<<<<< contribution
+
+
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("ConfirmContributionAdmin.fxml"));
+
 
        
 

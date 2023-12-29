@@ -3,6 +3,15 @@ package Session;
 public class SessionManager {
     private static String currentUser;
     private static int currentUserId;
+    private static String email;
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public static void setEmail(String email) {
+        SessionManager.email = email;
+    }
 
     public static void setCurrentUserId(int currentUserId) {
         SessionManager.currentUserId = currentUserId;

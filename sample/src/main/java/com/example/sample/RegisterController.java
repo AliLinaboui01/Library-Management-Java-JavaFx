@@ -85,7 +85,6 @@ public class RegisterController {
                 ex.printStackTrace();
                 throw new RuntimeException(ex);
             }
-
     }
 
     public void goLogin(ActionEvent e){

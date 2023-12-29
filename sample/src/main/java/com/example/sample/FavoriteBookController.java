@@ -53,14 +53,15 @@ public class FavoriteBookController implements Initializable {
     }
     private List<Book> favoriteBooks(){
         List<Book> ls = new ArrayList<>();
-        Book book = new Book();
+
         DataBase dataBase=new DataBase();
         Connection conn = dataBase.connect();
-        String select = "SELECT books.author, books.availableQuantity, books.bookID, books.category, books.description, books.image, books.isbn, books.language, books.pages, books.quantity, books.rating, books.title FROM books INNER JOIN favoritebooks ON books.bookID = favoritebooks.idBook INNER JOIN users ON favoritebooks.idUser = users.userID";
+        String select = "SELECT books.author, books.availableQuantity, books.bookID, books.category, books.description, books.image, books.isbn, books.language, books.pages, books.quantity, books.rating, books.title FROM books INNER JOIN favoritebooks ON books.bookID = favoritebooks.idBook INNER JOIN users ON favoritebooks.idUser = users.userID where idUser="+SessionManager.getCurrentUserId();
         try{
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(select);
             while(resultSet.next()){
+                Book book = new Book();
                 book.setAuthor(resultSet.getString("author"));
                 book.setAvailableQuantity(resultSet.getInt("availableQuantity"));
                 book.setIdBook(resultSet.getInt("bookID"));
