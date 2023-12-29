@@ -2,6 +2,7 @@ package com.example.sample;
 
 import BD.DataBase;
 import SMTP_Mail.SendMail;
+import Session.SessionManager;
 import com.example.sample.Services.GenerateQRCode;
 import com.google.zxing.WriterException;
 import javafx.event.ActionEvent;
@@ -70,7 +71,8 @@ public class ReservationController  implements Initializable {
             LocalDateTime currentDate = LocalDateTime.now();
             LocalDateTime returnDate = currentDate.plus(15, ChronoUnit.DAYS);
             preparedStatement.setTimestamp(4, Timestamp.valueOf(returnDate));
-            preparedStatement.setInt(5, this.idUser);
+
+            preparedStatement.setInt(5, SessionManager.getCurrentUserId());
             preparedStatement.setString(6,description);
             preparedStatement.executeUpdate();
             updateQuantityStatement.setInt(1,this.idBook);
@@ -132,11 +134,10 @@ public class ReservationController  implements Initializable {
 
         System.out.println("idBook: " + idBook);
         System.out.println("idUser: " + idUser);
-        String pathQrCode = GenerateQRCode.generateQrCode("User "+idUser+"reserver book " + idBook );
+        String pathQrCode = GenerateQRCode.generateQrCode("User "+SessionManager.getCurrentUser()+" reserver book " + idBook );
         this.QrPath = pathQrCode;
-        sendMail.SendVerificationMail("akkaouih17@gmail.com", "verificationCode");//send email
-
-        sendMail.sendEmailWithAttachment("akkaouih17@gmail.com", "Your RESERVATION Qr CODE ","ENSAH HOCEIMA", this.QrPath);
+        String emailUser = SessionManager.getEmail();
+        sendMail.sendEmailWithAttachment(emailUser, " Your RESERVATION Qr CODE ","ENSAH HOCEIMA", this.QrPath);
 
 
 

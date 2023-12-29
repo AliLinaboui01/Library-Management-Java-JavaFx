@@ -24,7 +24,7 @@ public class GenerateQRCode {
     public static String generateQrCode(String data) throws WriterException , IOException{
         String generatedString = generateRandomString(6);
         System.out.println("Generated String: " + generatedString);
-        String path = "C:\\Users\\DELL 6430\\abdelmalek sadi\\Desktop\\gitcolab\\Library-Management-Java-JavaFx\\sample\\src\\main\\resources\\com\\example\\sample\\imgs\\QR\\reservation\\"+generatedString+".jpg";
+        String path = "C:\\Users\\DELL VOS\\OneDrive\\Bureau\\Project-java-Gi2\\Library-Management-Java-JavaFx\\sample\\src\\main\\resources\\com\\example\\sample\\imgs\\QR\\reservation\\"+generatedString+".jpg";
         BitMatrix matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE,500,500);
 
         MatrixToImageWriter.writeToPath(matrix,"jpg", Paths.get(path));
