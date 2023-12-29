@@ -45,6 +45,8 @@ public class LoginController {
                 String loggedInUser = resultSet.getString("username");
                 String role = resultSet.getString("userType");
                 String email = resultSet.getString("email");
+                String image = resultSet.getString("image");
+                SessionManager.setImage(image);
                 SessionManager.setEmail(email);
                 int idUser=resultSet.getInt("userID");
                 SessionManager.setCurrentUser(loggedInUser);

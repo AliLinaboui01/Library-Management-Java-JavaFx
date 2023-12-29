@@ -2,11 +2,9 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -16,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.AdminHomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.AllReservationsAdminController">
    <left>
       <VBox prefHeight="890.0" prefWidth="270.0" styleClass="white-background" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -30,6 +28,56 @@
                            </image>
                         </ImageView>
                         <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToHome" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="text-color" />
+                           </styleClass>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="30.0" prefHeight="63.0" prefWidth="270.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-users-64.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="text-color" />
+                           </styleClass>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="93.0" prefHeight="63.0" prefWidth="270.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="237.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-reservation-50.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
@@ -50,66 +98,16 @@
                   <Insets left="20.0" right="20.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="30.0" prefHeight="63.0" prefWidth="270.0">
-               <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
-                     <children>
-                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-users-64.png" />
-                           </image>
-                        </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToPageUsers" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
-                           <styleClass>
-                              <String fx:value="transparent" />
-                              <String fx:value="text-color" />
-                           </styleClass>
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets left="20.0" right="20.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="93.0" prefHeight="63.0" prefWidth="270.0">
-               <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="237.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
-                     <children>
-                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-reservation-50.png" />
-                           </image>
-                        </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToReservation" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
-                           <styleClass>
-                              <String fx:value="transparent" />
-                              <String fx:value="text-color" />
-                           </styleClass>
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets left="20.0" right="20.0" />
-               </padding>
-            </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="156.0" prefHeight="63.0" prefWidth="270.0">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
                      <children>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imgs/icons8-books-64.png" />
                            </image>
                         </ImageView>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToBooks" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goAllBooks" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
                            <styleClass>
                               <String fx:value="transparent" />
                               <String fx:value="text-color" />
@@ -237,31 +235,6 @@
                         <Insets left="20.0" />
                      </padding>
                   </Separator>
-                  <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
-                     <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="237.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
-                           <children>
-                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@imgs/icons8-begging-hands-78%20(1).png" />
-                                 </image>
-                              </ImageView>
-                              <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goTocontibute" prefHeight="31.0" prefWidth="106.0" stylesheets="@css/style.css" text="contribute" textFill="#aeb9be">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="text-color" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" right="20.0" />
-                     </padding>
-                  </HBox>
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -318,7 +291,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="522.0" spacing="5.0" style="-fx-background-color: #F8FAFB; -fx-background-radius: 5;">
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="45.0" prefWidth="522.0" spacing="5.0" style="-fx-background-radius: 5;" styleClass="search">
                <children>
                   <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -369,10 +342,11 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <Button fx:id="userName" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" stylesheets="@css/style.css" text="Ali Linaboui">
+                  <Button fx:id="userName" mnemonicParsing="false" onAction="#goToProfile" prefHeight="26.0" prefWidth="82.0" stylesheets="@css/style.css" text="Ali Linaboui">
                      <styleClass>
                         <String fx:value="transparent" />
                         <String fx:value="white-background" />
+                        <String fx:value="mouse-moved-admin" />
                      </styleClass>
                   </Button>
                </children>
@@ -384,198 +358,70 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+         </padding>
          <children>
-            <Label prefHeight="34.0" prefWidth="70.0" text="Analytics" textAlignment="JUSTIFY">
+            <Label prefHeight="34.0" prefWidth="54.0" text="Books" textAlignment="JUSTIFY">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="1014.0" spacing="50.0" styleClass="transparent" stylesheets="@css/style.css">
-               <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="95.0" text="Books" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label fx:id="numberOfBooks" text="36">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="+55%" textFill="#82d616">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-group-of-projects-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="95.0" text="Users" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label fx:id="numberOfUsers" text="5">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-user-groups-80.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="210.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="134.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="112.0" text="contribut Books" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label fx:id="contributeBooks" text="20">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-new-contact-64.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="410.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="217.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="92.0" prefWidth="107.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Label prefHeight="26.0" prefWidth="139.0" text="Reservations" textFill="#93a3ab">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="149.0" spacing="4.0">
-                                 <children>
-                                    <Label fx:id="numberOfReservation" text="10">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@imgs/icons8-scoreboard-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
+            <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="1090.0">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
             </HBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="1020.0" style="-fx-background-radius: 15;" styleClass="white-background" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="19.0" prefWidth="1107.0" spacing="10.0" style="-fx-background-radius: 5;" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox prefHeight="52.0" prefWidth="755.0" spacing="20.0" style="-fx-background-radius: 15;" styleClass="white-background" stylesheets="@css/style.css">
-                     <children>
-                        <Label prefHeight="26.0" prefWidth="77.0" text="Report">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="591.0" styleClass="white-background" stylesheets="@css/style.css">
-                           <children>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" stylesheets="@css/style.css" text="Day">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" style="-fx-text-fill: #0561FC;" styleClass="transparent" stylesheets="@css/style.css" text="Week">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" stylesheets="@css/style.css" text="Month">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" stylesheets="@css/style.css" text="Year">
-                                 <styleClass>
-                                    <String fx:value="transparent" />
-                                    <String fx:value="my_text" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" top="15.0" />
-                     </padding>
-                  </HBox>
-                  <LineChart fx:id="lineChart" prefHeight="361.0" prefWidth="974.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="node" />
-                     </styleClass>
-                  </LineChart>
+                  <Label prefHeight="19.0" prefWidth="286.0" style="-fx-text-fill: #A6A9AA;" text="userName">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="26.0" prefHeight="19.0" prefWidth="148.0" style="-fx-text-fill: #A6A9AA;" text="BookName">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="96.0" layoutY="26.0" prefHeight="19.0" prefWidth="175.0" style="-fx-text-fill: #A6A9AA;" text="ReservationDate">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="161.0" layoutY="26.0" prefHeight="19.0" prefWidth="130.0" style="-fx-text-fill: #A6A9AA;" text="ReturnDate">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="595.0" layoutY="10.0" prefHeight="19.0" prefWidth="274.0" style="-fx-text-fill: #A6A9AA;" text="Action">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                </children>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </HBox>
+            <VBox prefHeight="716.0" prefWidth="922.0" spacing="10.0" styleClass="transparent" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+               <children>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="white-background" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="allReservationsAdminBox" alignment="TOP_CENTER" prefHeight="665.0" prefWidth="898.0" spacing="20.0" styleClass="white-background">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="30.0" />
+               </padding>
             </VBox>
          </children>
-         <padding>
-            <Insets left="50.0" right="50.0" top="25.0" />
-         </padding>
       </VBox>
    </center>
 </BorderPane>

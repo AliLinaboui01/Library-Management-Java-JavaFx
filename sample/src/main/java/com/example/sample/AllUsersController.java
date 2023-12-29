@@ -1,12 +1,14 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
@@ -30,10 +32,13 @@ public class AllUsersController implements Initializable {
     private VBox AllUseresVbox;
     private List<User> users;
 
+    @FXML
+    private Button username;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        username.setText(SessionManager.getCurrentUser());
         users = getUsers();
-List<User> allUseres = users;
+        List<User> allUseres = users;
 
         for (User user : allUseres) {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -109,6 +114,74 @@ List<User> allUseres = users;
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
+    public void logout(ActionEvent event){
+        try {
+            SessionManager.clearSession();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToHome(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToBooks(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allBooksAdmin.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
 
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+
+    public void goToAllUsers(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allusers.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToReservation(ActionEvent event){
+        try {
+            SessionManager.clearSession();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allReservationsAdmin.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
 
 }

@@ -4,6 +4,15 @@ public class SessionManager {
     private static String currentUser;
     private static int currentUserId;
     private static String email;
+    private static String image;
+
+    public static String getImage() {
+        return image;
+    }
+
+    public static void setImage(String image) {
+        SessionManager.image = image;
+    }
 
     public static String getEmail() {
         return email;

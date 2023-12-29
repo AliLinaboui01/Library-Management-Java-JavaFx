@@ -10,10 +10,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Book;
+import model.Reservation;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,87 +26,63 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class AllBooksAdminController implements Initializable {
+public class AllReservationsAdminController implements Initializable {
     @FXML
-    private VBox allBooksAdminBox;
-    private List<Book> allBooksAdmin;
-    @FXML
-    private Button username;
+    private VBox allReservationsAdminBox;
+    List<Reservation> allReservations;
 
+    @FXML
+    private Button userName;
+    @FXML
+    ImageView imageUser;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        allBooksAdmin = new ArrayList<>(getAllBooksAdmin());
-        username.setText(SessionManager.getCurrentUser());
-        for (Book book:allBooksAdmin){
+        userName.setText(SessionManager.getCurrentUser());
+        String image = SessionManager.getImage();
+        imageUser.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(image))));
+        allReservations = new ArrayList<>(getAllReservations());
+        for (Reservation reservation:allReservations){
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("cardBookAdmin.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("reservationCard.fxml"));
             try{
                 HBox cardBox = fxmlLoader.load();
-                CardBookAdminController cardBookAdminController = fxmlLoader.getController();
-                cardBookAdminController.setData(book);
-                allBooksAdminBox.getChildren().add(cardBox);
+                ReservationCardController reservationCardController = fxmlLoader.getController();
+                reservationCardController.setData(reservation);
+                allReservationsAdminBox.getChildren().add(cardBox);
             }catch (IOException e){
                 e.printStackTrace();
             }
+
         }
+
     }
-
-    public void addBook(ActionEvent event){
-        try {
-//             Load the FXML file for the register scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("addNewBookAdmin.fxml"));
-            Parent root = loader.load();
-
-            // Create a new scene
-            Scene nextScene = new Scene(root);
-
-            // Get the Stage from the current Node (you can adjust this if needed)
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene on the stage
-            currentStage.setScene(nextScene);
-            currentStage.setFullScreen(true);
-
-            currentStage.show();
-
-        } catch (IOException ex) {
-            ex.printStackTrace(); // Handle the exception appropriately
-        }
-    }
-    public List<Book> getAllBooksAdmin(){
-        List<Book> ls = new ArrayList<>();
-
+    public List<Reservation> getAllReservations(){
+        List<Reservation> ls =new ArrayList<>();
         DataBase dataBase=new DataBase();
-        Connection conn = dataBase.connect();
-        String select = "SELECT * FROM books";
+        Connection connection= dataBase.connect();
+        String select = "SELECT B.title, B.image, U.username, U.image, R.reservationDate, R.returnDate,U.userID,B.bookID FROM books B JOIN reservations R ON B.bookID = R.bookId JOIN users U ON R.userID = U.userID";
         try{
-            Statement statement = conn.createStatement();
+            Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(select);
             while(resultSet.next()){
-                Book book = new Book();
-                book.setAuthor(resultSet.getString("author"));
-                book.setAvailableQuantity(resultSet.getInt("availableQuantity"));
-                book.setIdBook(resultSet.getInt("bookID"));
-                book.setCategory(resultSet.getString("category"));
-                book.setDescription(resultSet.getString("description"));
-                book.setImageSrc(resultSet.getString("image"));
-                book.setIsbn(resultSet.getString("isbn"));
-                book.setLanguage(resultSet.getString("language"));
-                book.setPages(resultSet.getInt("pages"));
-                book.setQuantity(resultSet.getInt("quantity"));
-                book.setRating(resultSet.getFloat("rating"));
-                book.setName(resultSet.getString("title"));
-                ls.add(book);
+               Reservation reservation=new Reservation();
+                reservation.setBookName(resultSet.getString("title"));
+                reservation.setImageBook(resultSet.getString("image"));
+                reservation.setUserName(resultSet.getString("username"));
+                reservation.setImageUser(resultSet.getString("U.image")); // Assuming there's a column named 'image' for users
+                reservation.setReservationDate(resultSet.getDate("reservationDate"));
+                reservation.setReturnDate(resultSet.getDate("returnDate"));
+                reservation.setUserID(resultSet.getInt("userID"));
+                reservation.setBookID(resultSet.getInt("bookID"));
+                ls.add(reservation);
             }
             dataBase.closeConnection();
         }catch (SQLException e){
             e.printStackTrace();
         }
-
-
-
         return ls;
     }
     public void goAllBooks(ActionEvent event){
@@ -135,18 +114,11 @@ public class AllBooksAdminController implements Initializable {
 //             Load the FXML file for the register scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
             Parent root = loader.load();
-
-            // Create a new scene
             Scene nextScene = new Scene(root);
-
-            // Get the Stage from the current Node (you can adjust this if needed)
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Set the new scene on the stage
             currentStage.setScene(nextScene);
             currentStage.setFullScreen(true);
-
             currentStage.show();
-
         } catch (IOException ex) {
             ex.printStackTrace(); // Handle the exception appropriately
         }
@@ -179,19 +151,5 @@ public class AllBooksAdminController implements Initializable {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
-    public void goToAllReservations(ActionEvent event){
-        try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("allReservationsAdmin.fxml"));
-            Parent root = loader.load();
-            Scene nextScene = new Scene(root);
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            currentStage.setScene(nextScene);
-            currentStage.setFullScreen(true);
-            currentStage.show();
-
-        } catch (IOException ex) {
-            ex.printStackTrace(); // Handle the exception appropriately
-        }
-    }
 }
