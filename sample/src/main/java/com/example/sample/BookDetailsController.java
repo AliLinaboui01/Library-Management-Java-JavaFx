@@ -1,7 +1,10 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import com.google.zxing.WriterException;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import model.Book;
 
 import javax.mail.MessagingException;
@@ -26,6 +30,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -69,6 +76,14 @@ public class BookDetailsController implements Initializable {
 
     @FXML
     private Hyperlink link;
+    @FXML
+    private Button username;
+    @FXML
+    private Label dayTime;
+
+
+    @FXML
+    private Label timeAm;
 
     @FXML
     private Hyperlink link2;
@@ -122,9 +137,20 @@ public class BookDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println(getBookId());
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> updateLabels())
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.connect();
-
+        String currentUser = SessionManager.getCurrentUser();
+        if (currentUser != null) {
+            username.setText(currentUser);
+        } else {
+            // Handle the case where the current user is not set
+            username.setText("faild");
+        }
         String query = "SELECT * FROM Books WHERE bookID = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -164,6 +190,23 @@ public class BookDetailsController implements Initializable {
             dataBase.closeConnection();
         }
 
+    }
+    private void updateLabels() {
+        // Get the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+
+        // Format the date as "dd-MMM-yyyy"
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        String formattedDate = currentDate.format(dateFormatter);
+
+        // Format the time as "hh:mm a"
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        String formattedTime = currentTime.format(timeFormatter);
+
+        // Update the labels
+        dayTime.setText(formattedDate);
+        timeAm.setText(formattedTime);
     }
 
     @FXML
@@ -257,5 +300,9 @@ public class BookDetailsController implements Initializable {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
-
+    @FXML
+    void goToContribute(ActionEvent event) {
+   HomeController homeController = new HomeController();
+   homeController.goToContribute(event);
+    }
 }

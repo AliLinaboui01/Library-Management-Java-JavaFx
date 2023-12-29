@@ -10,10 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="345.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.BorrowdCardController">
    <children>
-      <HBox prefHeight="171.0" prefWidth="308.0" spacing="34.0">
+      <HBox prefHeight="171.0" prefWidth="308.0" spacing="62.0">
          <children>
             <ImageView fx:id="BookImg" fitHeight="150.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,7 +36,7 @@
                         <Font name="Inter Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="161.0" style="-fx-background-color: #A0A0A0;" text="Borrowed" textFill="WHITE">
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="170.0" style="-fx-background-color: #A0A0A0;" text="Borrowed" textFill="WHITE">
                      <font>
                         <Font name="Inter Bold" size="17.0" />
                      </font>
@@ -51,14 +50,14 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="70.0" prefWidth="145.0">
+            <VBox prefHeight="70.0" prefWidth="170.0">
                <children>
-                  <Label fx:id="BookTitle" prefHeight="15.0" prefWidth="164.0" text="Don’t Make Me think" textFill="#4d4d4d">
+                  <Label fx:id="BookTitle" prefHeight="22.0" prefWidth="168.0" text="Don’t Make Me think" textFill="#4d4d4d">
                      <font>
                         <Font name="Inter Regular" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="BookAuthor" prefHeight="36.0" prefWidth="122.0" text="Steve Krug, 2000" textFill="#4d4d4d">
+                  <Label fx:id="BookAuthor" prefHeight="27.0" prefWidth="156.0" text="Steve Krug, 2000" textFill="#4d4d4d">
                      <font>
                         <Font name="Inter Regular" size="12.0" />
                      </font>
@@ -70,7 +69,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="158.0" style="-fx-background-color: white;" styleClass="round-layout3" stylesheets="@css/style.css" text="Details" textFill="#f76b56">
+            <Button mnemonicParsing="false" onAction="#goToBookDetails" prefHeight="45.0" prefWidth="146.0" style="-fx-background-color: white;" styleClass="round-layout3" stylesheets="@css/style.css" text="Details" textFill="#f76b56">
                <font>
                   <Font name="Inter Bold" size="17.0" />
                </font>

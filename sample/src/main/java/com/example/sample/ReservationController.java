@@ -106,9 +106,7 @@ public class ReservationController  implements Initializable {
 
                     // Get the Stage from the current Node
                     Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    currentStage.close();
 
-                    // Set the owner of the dialog to the current stage
                     dialog.initOwner(currentStage);
 
                     // Show the dialog
