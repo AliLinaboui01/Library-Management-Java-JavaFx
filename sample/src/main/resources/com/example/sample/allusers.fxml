@@ -27,7 +27,7 @@
                                         <Image url="@imgs/icons8-home-50.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToHome" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -52,10 +52,11 @@
                                         <Image url="@imgs/icons8-users-64.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Users" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
+                              <String fx:value="active1" />
                                     </styleClass>
                                     <font>
                                         <Font size="15.0" />
@@ -77,7 +78,7 @@
                                         <Image url="@imgs/icons8-reservation-50.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToReservation" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -102,7 +103,7 @@
                                         <Image url="@imgs/icons8-books-64.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToBooks" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -225,11 +226,44 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
+                  <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="250.0">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Separator>
                     </children>
                     <VBox.margin>
                         <Insets top="20.0" />
                     </VBox.margin>
                 </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="237.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-logout-72.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Sign Out" textFill="#aeb9be">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="text-color" />
+                           </styleClass>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
             </children>
             <padding>
                 <Insets top="20.0" />
@@ -304,7 +338,13 @@
                                 </ImageView>
                             </children>
                         </HBox>
-                        <Label prefHeight="18.0" prefWidth="81.0" text="Ali Linaboui" />
+                  <Button fx:id="username" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" stylesheets="@css/style.css" text="Ali Linaboui">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="white-background" />
+                        <String fx:value="mouse-moved-admin" />
+                     </styleClass>
+                  </Button>
                     </children>
                     <padding>
                         <Insets left="10.0" />

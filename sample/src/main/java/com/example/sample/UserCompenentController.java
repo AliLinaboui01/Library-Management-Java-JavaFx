@@ -273,10 +273,7 @@ public class UserCompenentController {
       Dialog<Boolean> dialog = new Dialog<>();
       dialog.initStyle(StageStyle.TRANSPARENT);
       dialog.getDialogPane().setContent(root);
-
-      // Set the result converter to convert the result to a Boolean value
       dialog.setResultConverter(buttonType -> buttonType == ButtonType.OK);
-
       Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       dialog.initOwner(currentStage);
       Optional<Boolean> result = dialog.showAndWait();

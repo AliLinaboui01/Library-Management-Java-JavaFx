@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import Session.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -223,5 +224,85 @@ public class EditUserByAdminController implements Initializable {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         dialog.initOwner(currentStage);
         dialog.showAndWait();
+    }
+    public void goAllBooks(ActionEvent event){
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allBooksAdmin.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene
+            Scene nextScene = new Scene(root);
+
+            // Get the Stage from the current Node (you can adjust this if needed)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Set the new scene on the stage
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToProfile(ActionEvent event){
+
+    }
+    public void goToHome(ActionEvent event) {
+        try {
+//             Load the FXML file for the register scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+
+    }
+    public void logout(ActionEvent event){
+        try {
+            SessionManager.clearSession();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToAllUsers(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allusers.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
+    }
+    public void goToReservation(ActionEvent event){
+        try {
+            SessionManager.clearSession();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("allReservationsAdmin.fxml"));
+            Parent root = loader.load();
+            Scene nextScene = new Scene(root);
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.setScene(nextScene);
+            currentStage.setFullScreen(true);
+            currentStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace(); // Handle the exception appropriately
+        }
     }
 }

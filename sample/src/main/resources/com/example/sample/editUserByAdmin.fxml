@@ -29,7 +29,7 @@
                                         <Image url="@imgs/icons8-home-50.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToHome" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -58,6 +58,7 @@
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
+                              <String fx:value="active1" />
                                     </styleClass>
                                     <font>
                                         <Font size="15.0" />
@@ -79,7 +80,7 @@
                                         <Image url="@imgs/icons8-reservation-50.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goToReservation" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Reservations" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -104,7 +105,7 @@
                                         <Image url="@imgs/icons8-books-64.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goAllBooks" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Books" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
@@ -211,7 +212,7 @@
                                                 <Image url="@imgs/icons8-setting-50.png" />
                                             </image>
                                         </ImageView>
-                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Settings" textFill="#aeb9be">
+                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Settings" textFill="#aeb9be">
                                             <styleClass>
                                                 <String fx:value="transparent" />
                                                 <String fx:value="text-color" />
