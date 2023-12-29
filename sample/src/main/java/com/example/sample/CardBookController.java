@@ -35,6 +35,7 @@ public class CardBookController {
     private Label possibility;
     @FXML
     private Label titleBook;
+
     @FXML
     private Label categoryId;
     @FXML
@@ -47,6 +48,7 @@ public class CardBookController {
         imageBook.setImage(image);
         titleBook.setText(book.getName());
         authorName.setText(book.getAuthor());
+        categoryName.setText(book.getCategory());
         this.idBook=book.getIdBook();
         if(isBookAlreadyLoved(SessionManager.getCurrentUserId(),this.idBook)){
             Image redLove = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/love.png")));

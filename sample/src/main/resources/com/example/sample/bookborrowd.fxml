@@ -25,53 +25,67 @@
                         <Image url="@imgs/bg.png" />
                     </image>
                 </ImageView>
-                <VBox prefHeight="147.0" prefWidth="221.0" spacing="12.0">
-                    <children>
-                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
-                            <children>
-                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@imgs/icons8-home.png" />
-                                    </image>
-                                </ImageView>
+            <VBox prefHeight="196.0" prefWidth="306.0" spacing="12.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="306.0" spacing="10.0" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-home.png" />
+                           </image>
+                        </ImageView>
                         <Button mnemonicParsing="false" onAction="#goToHome" styleClass="transparent" stylesheets="@css/style.css" text="Home" textFill="#4d4d4d">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Button>
-                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0" spacing="10.0">
-                            <children>
-                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@imgs/icons8-search1.png" />
-                                    </image>
-                                </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="306.0" spacing="10.0" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-search1.png" />
+                           </image>
+                        </ImageView>
                         <Button mnemonicParsing="false" onAction="#goToAllBooks" styleClass="transparent" stylesheets="@css/style.css" text="Search" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Button>
-                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0">
-                            <children>
-                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@imgs/téléchargement%20(2).png" />
-                                    </image>
-                                </ImageView>
-                        <Button mnemonicParsing="false" onAction="#goToMyshelf" prefHeight="39.0" prefWidth="101.0" styleClass="transparent" stylesheets="@css/style.css" text=" My Shelf" textFill="#8a8a8a">
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="306.0" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/téléchargement%20(2).png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#goToMyshelf" prefHeight="56.0" prefWidth="84.0" styleClass="transparent" stylesheets="@css/style.css" text="My Shelf" textFill="#8a8a8a">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Button>
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-                <Pane prefHeight="279.0" prefWidth="221.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="306.0" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
+                     <children>
+                        <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-begging-hands-78%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#goToContribute" prefHeight="45.0" prefWidth="98.0" styleClass="transparent" stylesheets="@css/style.css" text="Contribute" textFill="#8a8a8a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+                <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="256.0" prefWidth="306.0" VBox.vgrow="ALWAYS" />
                 <VBox alignment="TOP_CENTER" prefHeight="119.0" prefWidth="221.0" spacing="12.0">
                     <children>
                         <Label prefHeight="22.0" prefWidth="134.0" text="About" textFill="#8a8a8a" />
@@ -113,54 +127,46 @@
                                         </HBox>
                                     </children>
                                 </Pane>
-                                <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="29.0" prefWidth="369.0" spacing="20.0" styleClass="round-layout" stylesheets="@css/style.css">
-                                    <children>
-                                        <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@imgs/icons8-time-96.png" />
-                                            </image>
-                                        </ImageView>
-                                        <Label prefHeight="22.0" prefWidth="65.0" text="09:00 AM">
-                                            <font>
-                                                <Font name="Arial Bold" size="13.0" />
-                                            </font>
-                                        </Label>
-                                        <ImageView fitHeight="27.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@imgs/calandrie.png" />
-                                            </image>
-                                        </ImageView>
-                                        <Label text="4-Mar-2023">
-                                            <font>
-                                                <Font name="Arial Bold" size="13.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox prefHeight="52.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
-                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="32.0" styleClass="round-layout" stylesheets="@css/style.css">
-                                    <children>
-                                        <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@imgs/4645949.png" />
-                                            </image>
-                                            <HBox.margin>
-                                                <Insets />
-                                            </HBox.margin>
-                                        </ImageView>
-                                        <Label text="Kenson">
-                                            <font>
-                                                <Font name="Arial" size="13.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                    <HBox.margin>
-                                        <Insets right="12.0" />
-                                    </HBox.margin>
-                                    <padding>
-                                        <Insets left="5.0" />
-                                    </padding>
-                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="69.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="29.0" prefWidth="369.0" spacing="20.0" styleClass="round-layout" stylesheets="@css/style.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imgs/icons8-time-96.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="timeAm" prefHeight="22.0" prefWidth="65.0" text="09:00 AM">
+                                       <font>
+                                          <Font name="Arial Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="27.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imgs/calandrie.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="dayTime" text="4-Mar-2023">
+                                       <font>
+                                          <Font name="Arial Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children></HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="29.0" prefWidth="139.0" spacing="2.0" styleClass="round-layout" stylesheets="@css/style.css">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="28.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/roundProfile.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="username" mnemonicParsing="false" onAction="#gotoProfile" prefHeight="25.0" prefWidth="115.0" styleClass="transparent" stylesheets="@css/style.css" text="Hamza " />
+                           </children>
+                        </HBox>
                             </children>
                         </HBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="SOMETIMES">

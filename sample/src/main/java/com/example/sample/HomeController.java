@@ -5,6 +5,8 @@ import Session.SessionManager;
 
 import BD.DataBase;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,10 +14,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.Book;
 import model.User;
 
@@ -25,6 +29,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,6 +45,12 @@ public class HomeController implements Initializable {
     @FXML
     private Button username;
     @FXML
+    private Label dayTime;
+
+
+    @FXML
+    private Label timeAm;
+    @FXML
     private HBox recomondebooks2;
     @FXML
     private HBox acadimicbook;
@@ -46,6 +59,13 @@ public class HomeController implements Initializable {
     private  List<Book> acadimicbooks;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //time
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> updateLabels())
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recomdedforyou = new ArrayList<>(recomdedforyou());
 
@@ -105,7 +125,23 @@ public class HomeController implements Initializable {
         }
     }
 
+    private void updateLabels() {
+        // Get the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
 
+        // Format the date as "dd-MMM-yyyy"
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        String formattedDate = currentDate.format(dateFormatter);
+
+        // Format the time as "hh:mm a"
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        String formattedTime = currentTime.format(timeFormatter);
+
+        // Update the labels
+        dayTime.setText(formattedDate);
+        timeAm.setText(formattedTime);
+    }
 
     private List<Book> recentlyAdded() {
         DataBase dataBase = new DataBase();

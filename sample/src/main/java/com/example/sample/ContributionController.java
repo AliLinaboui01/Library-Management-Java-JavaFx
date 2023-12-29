@@ -2,6 +2,8 @@ package com.example.sample;
 
 import BD.DataBase;
 import Session.SessionManager;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import model.Book;
 
 import java.io.File;
@@ -25,6 +28,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -39,6 +45,14 @@ public class ContributionController implements Initializable {
     private TextField BookName;
 
   private int userId;
+    @FXML
+    private Label dayTime;
+
+
+    @FXML
+    private Label timeAm;
+
+
 
   String imagePath;
     public int getUserId() {
@@ -66,9 +80,40 @@ public class ContributionController implements Initializable {
     private HBox mycontributions;
 
     private List<Book>  mycontribituions;
+    private void updateLabels() {
+        // Get the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+
+        // Format the date as "dd-MMM-yyyy"
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        String formattedDate = currentDate.format(dateFormatter);
+
+        // Format the time as "hh:mm a"
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        String formattedTime = currentTime.format(timeFormatter);
+
+        // Update the labels
+        dayTime.setText(formattedDate);
+        timeAm.setText(formattedTime);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mycontribituions= new ArrayList<>(getmyContribituions());
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> updateLabels())
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+        String currentUser = SessionManager.getCurrentUser();
+        if (currentUser != null) {
+            username.setText(currentUser);
+        } else {
+            // Handle the case where the current user is not set
+            username.setText("faild");
+        }
 
         for (Book book : mycontribituions) {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -175,7 +220,12 @@ public class ContributionController implements Initializable {
             dialog.initOwner(currentStage);
             dialog.showAndWait();
         }
+    @FXML
+    void gotoProfile(ActionEvent event) {
 
+   HomeController homeController= new HomeController();
+   homeController.gotoProfile(event);
+    }
 
 
 

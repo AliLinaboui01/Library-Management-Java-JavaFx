@@ -2,6 +2,8 @@ package com.example.sample;
 
 import BD.DataBase;
 import Session.SessionManager;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +12,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.Book;
 
 import java.io.IOException;
@@ -21,6 +25,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -30,9 +37,21 @@ public class AllBooksController implements Initializable {
     private VBox allBoxVbox;
     @FXML
     private Button username;
+    @FXML
+    private Label dayTime;
+
+
+    @FXML
+    private Label timeAm;
     private List<Book> allBooks;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //time
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> updateLabels())
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         String currentUser = SessionManager.getCurrentUser();
         username.setText(currentUser);
         allBooks = new ArrayList<>(allBooks());
@@ -50,6 +69,23 @@ public class AllBooksController implements Initializable {
             }
 
         }
+    }
+    private void updateLabels() {
+        // Get the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+
+        // Format the date as "dd-MMM-yyyy"
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        String formattedDate = currentDate.format(dateFormatter);
+
+        // Format the time as "hh:mm a"
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        String formattedTime = currentTime.format(timeFormatter);
+
+        // Update the labels
+        dayTime.setText(formattedDate);
+        timeAm.setText(formattedTime);
     }
     private List<Book> allBooks(){
         List<Book> ls = new ArrayList<>();
@@ -146,4 +182,16 @@ public class AllBooksController implements Initializable {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
+
+    @FXML
+    void goToContribute(ActionEvent event) {
+      HomeController homeController = new HomeController();
+      homeController.goToContribute(event);
+    }
+    @FXML
+    void gotoProfile(ActionEvent event) {
+      HomeController homeController = new HomeController();
+      homeController.gotoProfile(event);
+    }
+
 }
