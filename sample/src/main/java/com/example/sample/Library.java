@@ -20,17 +20,11 @@ public class Library extends Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("ConfirmContributionAdmin.fxml"));
-
-
-       
+        FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("getStarted.fxml"));
 
 
 
-
-
-
-        Scene scene = new Scene(fxmlLoader.load(), 900, 700);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
 /*
         FXMLLoader fxmlLoader = new FXMLLoader(Library.class.getResource("getStarted.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1150, 772);

@@ -67,6 +67,20 @@
                         </Button>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="221.0">
+                     <children>
+                        <ImageView fitHeight="23.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/icons8-begging-hands-78%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#goToContribute" styleClass="transparent" stylesheets="@css/style.css" text="Contribute" textFill="#8a8a8a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
             <Pane prefHeight="279.0" prefWidth="221.0" VBox.vgrow="ALWAYS" />
