@@ -12,7 +12,7 @@ import java.io.IOException;
 public class VerifyController {
     public void login(ActionEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
 
             // Create a new scene
@@ -23,7 +23,7 @@ public class VerifyController {
 
             // Set the new scene on the stage
             currentStage.setScene(nextScene);
-            currentStage.setFullScreen(true);
+
 
         } catch (IOException ex) {
             ex.printStackTrace(); // Handle the exception appropriately

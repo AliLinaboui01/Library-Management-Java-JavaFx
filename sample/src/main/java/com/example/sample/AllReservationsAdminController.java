@@ -42,7 +42,7 @@ public class AllReservationsAdminController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userName.setText(SessionManager.getCurrentUser());
         String image = SessionManager.getImage();
-        imageUser.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(image))));
+//        imageUser.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(image))));
         allReservations = new ArrayList<>(getAllReservations());
         for (Reservation reservation:allReservations){
             FXMLLoader fxmlLoader = new FXMLLoader();

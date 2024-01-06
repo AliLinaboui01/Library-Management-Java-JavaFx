@@ -27,7 +27,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="07" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="05" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />
@@ -37,7 +37,7 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="12" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="01" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />
@@ -47,7 +47,7 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2023" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2024" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />
@@ -64,7 +64,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="17" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="20" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />
@@ -74,7 +74,7 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="12" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="01" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />
@@ -84,7 +84,7 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: #F3F3F7; -fx-background-radius: 5;">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2023" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="31.0" text="2024" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/down.png" />

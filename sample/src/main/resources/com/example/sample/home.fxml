@@ -91,11 +91,11 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="22.0" prefWidth="134.0" text="Logout" textFill="#8a8a8a">
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="154.0" styleClass="transparent" stylesheets="@css/style.css" text="logout" textFill="#8a8a8a">
                      <font>
-                        <Font name="Inter Regular" size="15.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Label>
+                  </Button>
                   <Label prefHeight="22.0" prefWidth="134.0" text="Terms &amp; Condition" textFill="#8a8a8a">
                      <font>
                         <Font name="Inter Regular" size="15.0" />

@@ -330,4 +330,9 @@ public class HomeController implements Initializable {
             ex.printStackTrace(); // Handle the exception appropriately
         }
     }
+    @FXML
+    void logout(ActionEvent event) {
+        AdminHomeController adminHomeController=new AdminHomeController();
+        adminHomeController.logout(event);
+    }
 }

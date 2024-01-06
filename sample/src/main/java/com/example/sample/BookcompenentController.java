@@ -17,10 +17,9 @@ public class BookcompenentController {
 
 
     public void setData(Book book){
-        // Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(book.getImageSrc())));
-        // imagebc.setImage(image);
+
         if (book.getImageSrc() == null || book.getImageSrc().isEmpty()) {
-            imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
+            imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
         } else {
             try {
                 // Load user's image
@@ -29,13 +28,13 @@ public class BookcompenentController {
                     imagebc.setImage(new Image(stream));
                 } else {
                     // Provide a default image if the stream is null or invalid
-                    imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
+                    imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 // Handle the exception (e.g., log an error message)
                 // Provide a default image in case of an exception
-                imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/831.jpg"))));
+                imagebc.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
             }
         }
 

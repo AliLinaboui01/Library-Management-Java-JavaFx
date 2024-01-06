@@ -80,8 +80,8 @@ public class BooksContributeCardController {
         System.out.println(book.getName());
         addBookinBookslibrary(book);
         deleteBookById(this.bookID);
-        HomeController homeController= new HomeController();
-        homeController.goToContribute(event);
+        AdminHomeController adminHomeController = new AdminHomeController();
+        adminHomeController.goToHome(event);
     }
 
 
@@ -101,7 +101,7 @@ public class BooksContributeCardController {
                 book.setAuthor(resultSet.getString("author"));
                 book.setIdBook(resultSet.getInt("id"));
                 book.setCategory(resultSet.getString("category"));
-                book.setDescription(resultSet.getString("is a contribution by our Student "));
+                book.setDescription(resultSet.getString("description"));
                 book.setImageSrc(resultSet.getString("image"));
                 book.setLanguage(resultSet.getString("language"));
                 book.setPages(resultSet.getInt("pages"));

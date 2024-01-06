@@ -20,28 +20,23 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
                     <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="236.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">
                             <children>
                                 <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@imgs/icons8-home-50.png" />
                                     </image>
                                 </ImageView>
-                                <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
+                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#goHome" prefHeight="31.0" prefWidth="110.0" stylesheets="@css/style.css" text="Dashboard" textFill="#aeb9be">
                                     <styleClass>
                                         <String fx:value="transparent" />
                                         <String fx:value="text-color" />
-                                        <String fx:value="active1" />
                                     </styleClass>
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </Button>
                             </children>
-                            <styleClass>
-                                <String fx:value="mouse-moved-admin" />
-                                <String fx:value="active" />
-                            </styleClass>
                         </HBox>
                     </children>
                     <padding>
@@ -240,6 +235,30 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </VBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="271.0" spacing="5.0" style="-fx-background-radius: 10;" stylesheets="@css/style.css">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/icons8-begging-hands-78%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" stylesheets="@css/style.css" text="contribute" textFill="#aeb9be">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-color" />
+                        <String fx:value="active1" />
+                     </styleClass>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="mouse-moved-admin" />
+                  <String fx:value="active1" />
+                  <String fx:value="active" />
+               </styleClass>
+            </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="270.0">
                     <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="237.0" spacing="5.0" style="-fx-background-radius: 10;" styleClass="mouse-moved-admin" stylesheets="@css/style.css">

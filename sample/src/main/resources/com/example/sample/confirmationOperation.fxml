@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="332.0" prefWidth="323.0" style="-fx-background-color: #FFE2E5; -fx-background-radius: 10;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.ConfirmationOperationController">
+<AnchorPane prefHeight="332.0" prefWidth="323.0" style="-fx-background-color: #FFE2E5; -fx-background-radius: 10;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.ConfirmationOperationController">
    <children>
       <Button layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#isConfirmed" prefHeight="39.0" prefWidth="136.0" style="-fx-background-color: #B80000;" stylesheets="@css/style.css" text="confirmer" textFill="WHITE">
          <styleClass>

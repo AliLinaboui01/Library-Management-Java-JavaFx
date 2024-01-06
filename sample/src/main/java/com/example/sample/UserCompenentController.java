@@ -286,8 +286,28 @@ public class UserCompenentController {
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.connect();
             String sql = "DELETE FROM Users WHERE userID = ?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            String sql2 = "DELETE FROM contributbook WHERE userID = ?";
+            String sql3 = "DELETE FROM darckliste WHERE idUser = ?";
+            String sql4 = "DELETE FROM favoritebooks WHERE idUser = ?";
+            String sql5 = "DELETE FROM  reservations WHERE userID = ?";
+
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                PreparedStatement preparedStatement1 = connection.prepareStatement(sql2);
+                PreparedStatement preparedStatement3 = connection.prepareStatement(sql3);
+                PreparedStatement preparedStatement4 = connection.prepareStatement(sql4);
+                PreparedStatement preparedStatement5 = connection.prepareStatement(sql5);
+                preparedStatement1.setInt(1,userIdToRemove);
+                preparedStatement3.setInt(1, userIdToRemove);
+                preparedStatement4.setInt(1, userIdToRemove);
                 preparedStatement.setInt(1, userIdToRemove);
+                preparedStatement5.setInt(1, userIdToRemove);
+                int rowsAffectede5 = preparedStatement5.executeUpdate();
+
+                int doneRemove = preparedStatement1.executeUpdate();
+                    int rowsAffectede = preparedStatement3.executeUpdate();
+                int rowsAffectede4 = preparedStatement4.executeUpdate();
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if (rowsAffected > 0) {
