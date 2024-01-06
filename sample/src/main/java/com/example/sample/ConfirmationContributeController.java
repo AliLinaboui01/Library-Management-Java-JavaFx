@@ -1,6 +1,7 @@
 package com.example.sample;
 
 import BD.DataBase;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -84,6 +85,11 @@ public class ConfirmationContributeController implements Initializable {
         }
 
         return ls;
+    }
+    @FXML
+    void goHome(ActionEvent event) {
+        AdminHomeController adminHomeController = new AdminHomeController();
+        adminHomeController.goToHome(event);
     }
 
 

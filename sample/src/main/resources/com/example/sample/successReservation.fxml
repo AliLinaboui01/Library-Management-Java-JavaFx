@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="775.0" prefWidth="490.0" style="-fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.SuccessReservationController">
+<AnchorPane prefHeight="775.0" prefWidth="490.0" style="-fx-background-radius: 15;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sample.SuccessReservationController">
    <children>
       <Label alignment="CENTER" layoutY="131.0" prefHeight="35.0" prefWidth="492.0" text="Process Completed">
          <font>

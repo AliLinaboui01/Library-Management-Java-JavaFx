@@ -180,7 +180,6 @@ public class UserCrudController implements Initializable {
                Path destinationPath = Paths.get(System.getProperty("user.dir"), imageDirectory, uniqueFileName);
                 // Copy the selected file to the destination directory
                 Files.copy(selectedFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
-
                 System.out.println("Image replaced successfully!");
             } catch (IOException e) {
                 System.out.println(e.getMessage());

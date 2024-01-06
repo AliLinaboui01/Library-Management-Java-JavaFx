@@ -53,7 +53,7 @@ public class LoginController {
                 SessionManager.setCurrentUserId(idUser);
                 // Successful login logic goes here
                 // Load the next FXML file
-                if(role.equals("admin")){
+                if(role.equals("admin")||role.equals("Admin")){
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("adminHome.fxml"));
                         Parent root = loader.load();

@@ -47,7 +47,8 @@ public class CardBookAdminController {
     private  int bookID;
     public CardBookAdminController(){}
     public void setData(Book book){
-
+        bookQuantity.setText(Integer.toString(book.getAvailableQuantity()));
+        bookCategory.setText(book.getCategory());
         bookTitle.setText(book.getName());
         authorName.setText(book.getAuthor());
         this.myBook=book;

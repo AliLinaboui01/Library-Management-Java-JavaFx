@@ -189,9 +189,6 @@ public class ProfileController implements Initializable {
         System.out.println(idUser);
         if (currentUser != null) {
             username.setText(currentUser);
-        } else {
-            // Handle the case where the current user is not set
-            username.setText("faild");
         }
         int numberContibution = getNumberOfContributionsByUserId(idUser);
         nomberContribution.setText(""+numberContibution);

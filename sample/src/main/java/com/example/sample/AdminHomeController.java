@@ -51,17 +51,17 @@ public class AdminHomeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userName.setText(SessionManager.getCurrentUser());
         String image = SessionManager.getImage();
-        imageUser.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(image))));
+//        imageUser.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(image))));
         numberOfUsers.setText(Integer.toString(getCountUser()));
         numberOfBooks.setText(Integer.toString(getCountBooks()));
         numberOfReservation.setText(Integer.toString(getCountReservations()));
         contributeBooks.setText(Integer.toString(getCountContributeBooks()));
 
         XYChart.Series<String, Number> series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>("Monday",getCountBooks() ));
-        series.getData().add(new XYChart.Data<>("Tuesday", getCountUser()));
-        series.getData().add(new XYChart.Data<>("Wednesday", getCountReservations()));
-        series.getData().add(new XYChart.Data<>("Thursday", getCountContributeBooks()));
+        series.getData().add(new XYChart.Data<>("Books",getCountBooks() ));
+        series.getData().add(new XYChart.Data<>("Users", getCountUser()));
+        series.getData().add(new XYChart.Data<>("Reservations", getCountReservations()));
+        series.getData().add(new XYChart.Data<>("Contribute", getCountContributeBooks()));
 
 
         Platform.runLater(() -> {

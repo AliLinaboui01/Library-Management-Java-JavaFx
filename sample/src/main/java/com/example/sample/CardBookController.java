@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import model.Book;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,8 +45,27 @@ public class CardBookController {
     private boolean isBookFavorite = false;
     private int idBook;
     public void setData(Book book) {
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(book.getImageSrc())));
-        imageBook.setImage(image);
+        String imageUrl = book.getImageSrc();
+        if (imageUrl == null || imageUrl.isEmpty()) {
+            imageBook.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
+        } else {
+            try {
+                // Load user's image
+                InputStream stream = getClass().getResourceAsStream(imageUrl);
+                if (stream != null) {
+                    imageBook.setImage(new Image(stream));
+                } else {
+                    // Provide a default image if the stream is null or invalid
+                    imageBook.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Handle the exception (e.g., log an error message)
+                // Provide a default image in case of an exception
+                imageBook.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rich.jpeg"))));
+            }
+        }
+
         titleBook.setText(book.getName());
         authorName.setText(book.getAuthor());
         categoryName.setText(book.getCategory());

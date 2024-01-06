@@ -14,7 +14,6 @@ import java.sql.Statement;
 
 public class Library extends Application {
     @Override
-
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
 
 
